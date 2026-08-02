@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varun Sarangapani Counselling &mdash; Toronto Psychotherapy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-Book.ttf') format('truetype'); font-weight: 350; font-style: normal; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-Bold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-BoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-Heavy.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  @font-face { font-family: 'Heading Now'; src: url('fonts/HeadingNow-HeavyItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; font-display: swap; unicode-range: U+0-2F, U+3A-10FFFF; }
+  html, body { margin: 0; padding: 0; background: #FCF3E3; }
+  * { box-sizing: border-box; }
+  a { color: #F1362E; text-decoration: none; }
+  a:hover { color: #141310; }
+  input, textarea, button { font-family: 'Heading Now', 'Archivo', sans-serif; }
+  @media (max-width: 820px) {
+    section, main[style*="padding"] { padding-left: 20px !important; padding-right: 20px !important; }
+    main section { padding-top: 40px !important; padding-bottom: 40px !important; }
+    main[style*="padding"] { padding-top: 40px !important; padding-bottom: 56px !important; }
+    section[style*="grid-template-columns"], main div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 22px !important; }
+    h1 { font-size: 38px !important; line-height: 1.08 !important; }
+    h2 { font-size: 29px !important; line-height: 1.12 !important; }
+    h3 { font-size: 19px !important; }
+    img[style*="position:absolute"], img[style*="position: absolute"] { display: none !important; }
+    div[style*="padding:52px 60px"], div[style*="padding: 52px 60px"],
+    div[style*="padding:48px 56px"], div[style*="padding: 48px 56px"],
+    div[style*="padding:44px"], div[style*="padding: 44px"] { padding: 26px 22px !important; }
+    div[style*="border-radius:28px"], div[style*="border-radius: 28px"] { border-radius: 20px !important; }
+    header > div { padding-left: 20px !important; padding-right: 20px !important; row-gap: 10px !important; }
+    header nav { margin-left: 0 !important; justify-content: flex-start !important; width: 100%; gap: 16px !important; }
+    header nav a, header nav button { font-size: 13.5px !important; }
+    blockquote, blockquote span { font-size: 22px !important; line-height: 1.3 !important; }
+    input, textarea { font-size: 16px !important; }
+    main img, footer img { max-width: 100% !important; height: auto !important; }
+    main p, main span, main div { max-width: 100% !important; }
+    main div[style*="display:flex"], main div[style*="display: flex"] { flex-wrap: wrap !important; }
+    footer div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 26px !important; }
+    footer > div { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+  .hov0:hover { background:#E9DFBF }
+  .hov1:hover { background:#141310;color:#FCF3E3 }
+  .hov2:hover { background:#141310 }
+  .hov3:hover { color:#E9DFBF }
+  .hov4:hover { border-color:#F1362E;background:#E9DFBF }
+  .hov5:hover { opacity:0.7 }
+</style>
+</head>
+<body>
+
+<div style="background:#FCF3E3;font-family:'Heading Now','Archivo',sans-serif;color:#141310;min-height:100vh;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:50;background:#FCF3E3;border-bottom:1px solid rgba(20,19,16,0.1)">
+    <div style="max-width:1220px;margin:0 auto;padding:18px clamp(16px,2.6vw,40px);display:flex;align-items:center;gap:clamp(16px,2vw,40px);flex-wrap:wrap">
+      <a href="#" onclick="nav('home',event)" style="font-family: 'Heading Now',sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -0.02em; color: #F1362E; white-space: nowrap">Varun Sarangapani Counselling</a>
+      <nav style="display:flex;align-items:center;gap:clamp(12px,1.6vw,30px);margin-left:auto;flex-wrap:wrap;justify-content:flex-end;min-width:0">
+        <a href="#" onclick="nav('home',event)" style="font-size:14.5px;font-weight:500;color:#141310">Home</a>
+        <a href="#" onclick="nav('about',event)" style="font-size:14.5px;font-weight:500;color:#141310">About</a>
+
+        <div style="position:relative">
+          <button onclick="toggleServices(event)" style="display:flex;align-items:center;gap:7px;background:none;border:0;padding:0;font-size:14.5px;font-weight:500;color:#141310;cursor:pointer">Services<span style="font-size:9px;opacity:0.55">▾</span></button>
+          
+            <div id="servicesMenu" style="display:none;position:absolute;top:34px;left:-18px;width:288px;background:#FCF3E3;border:1.5px solid #F1362E;border-radius:16px;padding:10px;flex-direction:column;box-shadow:6px 8px 0 rgba(46,63,203,0.14)">
+              <a class="hov0" href="#" onclick="nav('individual',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Individual Counselling<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">50 minutes, just you</span></a>
+              <a class="hov0" href="#" onclick="nav('couples',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Couples Counselling<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">For two people, together</span></a>
+              <a class="hov0" href="#" onclick="nav('meditation',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Meditation &amp; Mindfulness<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">Guided practice, bi-weekly</span></a>
+              
+            </div>
+          
+        </div>
+
+        <a href="#specialities" onclick="goSpecSection(event)" style="font-size:14.5px;font-weight:500;color:#141310">Specialization</a>
+
+        <a href="#" onclick="nav('contact',event)" style="font-size:14.5px;font-weight:500;color:#141310">Contact</a>
+        <a class="hov1" href="#contact" onclick="nav('contact',event)" style="background:#F1362E;color:#FCF3E3;font-size:14.5px;font-weight:600;padding:12px clamp(14px,1.5vw,22px);border-radius:999px;white-space:nowrap;flex:none">Book a Session</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="page-home">
+  <main>
+    <section style="max-width:1220px;margin:0 auto;padding:70px 40px 40px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center">
+      <div>
+        
+        <h1 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:clamp(52px,6vw,84px);line-height:1.04;letter-spacing:-0.03em;color:#F1362E;margin:0 0 26px">It helps to<br>say it <span style="white-space:nowrap;background:url('art/highlight-brush-trim.png') 50% 60%/104% 0.92em no-repeat;padding:0 0.1em;box-decoration-break:clone">out loud.</span></h1>
+        
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <a class="hov2" href="#contact" onclick="nav('contact',event)" style="background:#F1362E;color:#FCF3E3;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:999px">Book a Session</a>
+          <a class="hov0" href="#" onclick="nav('individual',event)" style="border:1.5px solid #141310;color:#141310;font-size:15.5px;font-weight:500;padding:15px 28px;border-radius:999px">See how it works</a>
+          <img src="art/squiggle2.png" alt="" style="width:64px;margin-left:6px">
+        </div>
+      </div>
+      <div style="position:relative">
+        <img src="art/asterix.png" alt="" style="position:absolute;top:-34px;left:-52px;width:74px;z-index:2">
+        <img src="art/redsquiggle.png" alt="" style="position:absolute;bottom:-46px;right:-24px;width:96px;z-index:2">
+        <img src="art/redasterix.png" alt="" style="position:absolute;top:-30px;right:26px;width:72px;z-index:2">
+        <img src="./best-msca6nrq-jf9y.png" alt="Varun at a table" style="width: 100%; display: block; object-fit: fill">
+        <div style="position: absolute; left: 6px; background: #E9DFBF; border-radius: 14px; padding: 16px 20px; max-width: 230px; font-size: 15px; font-weight: 400; line-height: 1.45; transform: rotate(-2deg); top: 324px; text-align: center">No pressure, no scripts. We start wherever you are.</div>
+      </div>
+    </section>
+
+    <section style="max-width: 1220px; margin: 0 auto; padding: 50px 40px; position: relative">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        <div style="background:#E9DFBF;border-radius:22px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:26px;color:#F1362E">One-to-one</span>
+          <p style="margin:0;font-size:14.5px;font-weight:350;line-height:1.55">Weekly fifty minute sessions to talk things through with someone who is only there for you.</p>
+          <a href="#" onclick="nav('individual',event)" style="margin-top:auto;font-size:14px;font-weight:600">Read more →</a>
+        </div>
+        <div style="background:#F1362E;border-radius:22px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px;color:#FCF3E3">
+          <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 26px">For couples</span>
+          <p style="margin:0;font-size:14.5px;font-weight:350;line-height:1.55">A steady, even-handed space for two people who want to understand each other better.</p>
+          <a class="hov3" href="#" onclick="nav('couples',event)" style="margin-top:auto;font-size:14px;font-weight:600;color:#FCF3E3">Read more →</a>
+        </div>
+        <div style="border:1.5px solid #F1362E;border-radius:22px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:26px;color:#F1362E">Meditation</span>
+          <p style="margin:0;font-size:14.5px;font-weight:350;line-height:1.55">Guided breathing and mindfulness you can actually keep up with during a busy week.</p>
+          <a href="#" onclick="nav('meditation',event)" style="margin-top:auto;font-size:14px;font-weight:600">Read more →</a>
+        </div>
+      </div>
+    <img src="./underline-msc7sl4y-dyij.png" alt="" style="width: 180px; flex: none; position: absolute; left: 64px; top: 163px"></section>
+
+    <section style="max-width: 1220px; margin: 0 auto; padding: 60px 40px; position: relative">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:44px">
+        <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:54px;line-height:1.05;letter-spacing:-0.02em;color:#F1362E;margin:0"><span style="background:url('art/highlight-band-trim.png') 50% 60%/104% 1em no-repeat;padding:0 0.06em">How it goes</span></h2>
+        <div style="display:flex;align-items:flex-end;gap:24px">
+          
+            <img src="art/squiggle.png" alt="" style="width:150px;margin-bottom:10px">
+          
+          <img src="./candle-msc8hwin-qp3s.png" alt="Two people embracing" style="width:230px;display:block;margin-bottom:-44px">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:34px">
+        <div>
+          <span style="display:flex;align-items:center;gap:10px;height:22px"></span>
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:10px 0 10px">Say hello</h3>
+          <p style="margin:0;font-size:15px;font-weight:350;line-height:1.6">Send a few lines about what's going on. A reply comes within two days.</p>
+        </div>
+        <div>
+          <span style="display:flex;align-items:center;gap:10px;height:22px"></span>
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:10px 0 10px">A first conversation</h3>
+          <p style="margin:0;font-size:15px;font-weight:350;line-height:1.6">Twenty free minutes to see how it feels. No notes, no commitment, no follow-up unless you want one.</p>
+        </div>
+        <div>
+          <span style="display:flex;align-items:center;gap:10px;height:22px"></span>
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:10px 0 10px">Find your rhythm</h3>
+          <p style="margin:0;font-size:15px;font-weight:350;line-height:1.6">Weekly, bi-weekly, or a handful of sessions when life is loud. You set the pace and can pause anytime.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section style="max-width:1220px;margin:0 auto;padding:50px 40px">
+      <div style="position:relative;background:#E9DFBF;border-radius:28px;padding:52px 60px;display:grid;grid-template-columns:1.4fr 0.6fr;gap:40px;align-items:center">
+        <img src="art/redasterix.png" alt="" style="position:absolute;top:-26px;left:-22px;width:80px">
+        <div>
+          <p style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#2E3FCB;margin:0 0 18px">My philosophy</p>
+          <p style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:30px;line-height:1.3;margin:0 0 18px;text-wrap:pretty">I'm not trying to be in your life forever. I'm trying to make myself unnecessary.</p>
+          <p style="font-size:16px;font-weight:350;line-height:1.7;margin:0;max-width:520px;text-wrap:pretty">We work on the problem together, and along the way you build the tools to handle it yourself. Most people reach a point where the weekly hour is no longer what they need, and that's the goal. And of course, the door stays open for a tune-up when life changes shape again.</p>
+        </div>
+        <img src="./mirror-msc7po70-dme9.png" alt="Two people sitting together" style="width:100%;display:block">
+      </div>
+    </section>
+    
+
+    <section style="max-width:1220px;margin:0 auto;padding:60px 40px">
+      <div id="specialities" style="display:flex;align-items:center;gap:26px;margin:0 0 12px;scroll-margin-top:100px">
+        <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:54px;line-height:1.05;letter-spacing:-0.02em;color:#F1362E;margin:0"><span style="background:url('art/highlight-scribble-trim.png') 50% 58%/104% 1.1em no-repeat;padding:0 0.06em">What people bring here</span></h2>
+        <img src="art/squiggle.png" alt="" style="width:120px;flex:none">
+      </div>
+      
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Anxiety &amp; everyday stress</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">Racing thoughts, tight chest, Sunday-night dread.</span>
+        </div>
+        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Relationships &amp; family</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">The same argument, on repeat, for years.</span>
+        </div>
+        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Trauma</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">What happened, and what it left behind.</span>
+        </div>
+        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">PTSD</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">A body still braced long after the event.</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1220px;margin:0 auto;padding:50px 40px 90px">
+      <div style="position:relative;border:1.5px solid #F1362E;border-radius:28px;padding:48px 56px;display:grid;grid-template-columns:1fr 0.8fr;gap:30px;align-items:center">
+        <img src="art/cross.png" alt="" style="position: absolute; top: 33px; width: 88px; left: 841px"><img src="./s-squigglke-msc7rs7i-kn84.png" alt="" style="position: absolute; top: 59px; width: 88px; left: 583px">
+        <img src="art/spiral.png" alt="" style="position:absolute;bottom:-24px;left:-28px;width:86px">
+        <div>
+          <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:44px;line-height:1.05;letter-spacing:-0.02em;color:#F1362E;margin:0 0 18px">Start with twenty<br><span style="background:url('art/highlight-band-trim.png') 50% 60%/104% 1em no-repeat;padding:0 0.06em">free minutes.</span></h2>
+          <p style="font-size:16px;font-weight:350;line-height:1.6;max-width:420px;margin:0 0 28px">No forms, no waiting list. Pick a time that suits you and we'll talk.</p>
+          <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+            <a class="hov2" href="#contact" onclick="nav('contact',event)" style="background:#F1362E;color:#FCF3E3;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:999px">Book a Session</a>
+            <a href="mailto:varun.counselling@gmail.com" style="font-size:15px;font-weight:500;color:#141310;border-bottom:1.5px solid #F1362E">varun.counselling@gmail.com</a>
+          </div>
+        </div>
+        <img src="./sitting-msc8k5b5-d4sy.png" alt="Person sitting cross-legged" style="width: 476px; display: block; align-self: stretch; height: 456px">
+      </div>
+    </section>
+  </main>
+  </div>
+
+  <div id="page-about" style="display:none">
+  <main style="max-width:1220px;margin:0 auto;padding:70px 40px 90px">
+    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start">
+      <div>
+        <p style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:500;font-size:15px;color:#2E3FCB;margin:0 0 20px">About</p>
+        <h1 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:clamp(46px,5.2vw,72px);line-height:1.04;letter-spacing:-0.03em;color:#F1362E;margin:0 0 26px">Hi, I'm <span style="white-space:nowrap;background:url('art/highlight-block-trim.png') 50% 58%/106% 1.05em no-repeat;padding:0 0.1em">Varun.</span></h1>
+        <p style="font-family:'Heading Now','Archivo',sans-serif;font-size:23px;font-weight:400;line-height:1.45;letter-spacing:-0.01em;margin:0 0 26px;max-width:540px;text-wrap:pretty">I'm drawn to what lies beneath the surface. The patterns, stories and experiences that shape how we see ourselves and move through the world. My own journey taught me that real change usually happens in the relationship we have with ourselves.</p>
+        <p style="font-size:16.5px;font-weight:350;line-height:1.7;margin:0 0 20px;max-width:520px;text-wrap:pretty">I bring a calm, curious, grounded presence to therapy. It is non-judgmental, and genuinely interested in who you are, not just what you're struggling with. I also believe warmth and rigour aren't opposites, and I hold both.</p>
+        <p style="font-size:16.5px;font-weight:350;line-height:1.7;margin:0 0 34px;max-width:520px;text-wrap:pretty">My approach is conversational rather than clinical. I ask questions, I keep track of the threads, and I'll gently point out patterns when I notice them. What we talk about stays between us.</p>
+        <div style="max-width:540px;margin:0 0 34px">
+          <p style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#2E3FCB;margin:0 0 14px">Who I work with</p>
+          <p style="font-size:16px;font-weight:350;line-height:1.65;margin:0 0 16px">Individuals (18+) and teens (16+) — and anyone wanting a kinder relationship with themselves.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Anxiety</span>
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Depression</span>
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Life changes</span>
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Relationships</span>
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Loss &amp; grief</span>
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Shame</span>
+            <span style="border:1.5px solid rgba(20,19,16,0.2);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:400">Self-criticism</span>
+          </div>
+        </div><div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:560px">
+          <div style="background:#E9DFBF;border-radius:18px;padding:24px">
+            <span style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:32px;color:#F1362E;display:block">CRPO</span>
+            <span style="font-size:13.5px;font-weight:400;line-height:1.5;display:block;margin-top:6px">Registered Psychoterapist (Qualifying)</span>
+          </div>
+          <div style="background:#E9DFBF;border-radius:18px;padding:24px">
+            <span style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:32px;color:#F1362E;display:block">Insured</span>
+            <span style="font-size:13.5px;font-weight:400;line-height:1.5;display:block;margin-top:6px">Covered by all major insurance providers</span>
+          </div>
+        </div>
+      </div>
+      <div style="position:relative">
+        <img src="art/redasterix.png" alt="" style="position:absolute;top:-14px;left:-26px;width:74px;z-index:2">
+        <img src="art/redsquiggle.png" alt="" style="position:absolute;top:-26px;right:-16px;width:86px;z-index:2">
+        <img src="./graphic-msc9eq18-obop.png" alt="Person making tea" style="width:100%;display:block;margin-bottom:26px">
+        <div style="position:relative;border:1.5px solid #F1362E;border-radius:20px;padding:28px">
+          <img src="art/arrow.png" alt="" style="position:absolute;top:-40px;right:-14px;width:78px">
+          <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:26px;color:#F1362E;margin:0 0 18px">My approach</h2>
+          <div style="display:flex;flex-direction:column;gap:14px;font-size:14.5px;font-weight:350;line-height:1.65">
+            <p style="margin:0">I work integratively, drawing on a range of evidence-based approaches — Compassion-Focused Therapy, CBT, somatic and mindfulness-based methods, IFS and Emotionally Focused Therapy — tailored to what you actually need, not a fixed formula.</p>
+            <p style="margin:0">Sessions have a rhythm: we ground, we explore, we work, and we close with grounding again. I tend to work at the roots rather than only the symptoms, and I'm particularly drawn to the relationship between shame, self-criticism, and all the ways we've learned to protect ourselves from the world.</p>
+            <p style="margin:0">I also believe psychoeducation is a powerful tool — understanding why you feel or respond the way you do can be its own form of relief. And I love a good metaphor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <div id="page-detail" style="display:none">
+  <main style="max-width:1220px;margin:0 auto;padding:70px 40px 90px">
+    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start;margin-bottom:64px">
+      <div>
+        
+        <h1 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:66px;line-height:1.04;letter-spacing:-0.03em;color:#F1362E;margin:0 0 26px" id="detailTitle"></h1>
+        <p style="font-size:18px;font-weight:350;line-height:1.65;margin:0 0 30px;max-width:520px;text-wrap:pretty" id="detailLede"></p>
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <a class="hov2" href="#contact" onclick="nav('contact',event)" style="background:#F1362E;color:#FCF3E3;font-size:15px;font-weight:600;padding:15px 28px;border-radius:999px">Book a Session</a>
+          <a href="#" onclick="nav('home',event)" style="font-size:15px;font-weight:500;color:#141310;border-bottom:1.5px solid #F1362E">Back home</a>
+          <img src="art/s-squiggle.png" alt="" style="width:58px">
+        </div>
+      </div><div style="position:relative">
+        <img src="art/redsquiggle.png" alt="" style="position:absolute;top:-8px;left:-30px;width:70px;z-index:2">
+        <img src="art/cross.png" alt="" style="position:absolute;bottom:14px;right:-20px;width:74px;z-index:2">
+        <img src="./sleepyguy-mscb9rm8-o1s5.png" id="detailArt" alt="Illustration" width="1000" height="1000" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 1000px; aspect-ratio: 1000 / 1000">
+      </div>
+      
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start">
+      <div>
+        <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:36px;line-height:1.05;color:#F1362E;margin:0 0 28px" id="detailListTitle"></h2>
+        <div id="detailPoints" style="display:flex;flex-direction:column;gap:18px"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="background:#E9DFBF;border-radius:20px;padding:28px">
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px;margin:0 0 16px">The practical bits</h3>
+          <div id="detailFacts" style="display:flex;flex-direction:column;gap:11px;font-size:14.5px;font-weight:350;line-height:1.5"></div>
+        </div>
+        <div style="position:relative;background:#F1362E;border-radius:20px;padding:28px;color:#FCF3E3">
+          <img src="art/asterix.png" alt="" style="position:absolute;top:-30px;left:-26px;width:66px">
+          <p style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:20px;line-height:1.35;margin:0 0 16px" id="detailNote"></p>
+          <a href="mailto:varun.counselling@gmail.com" style="font-size:14.5px;font-weight:600;color:#FCF3E3;border-bottom:1.5px solid #FCF3E3">varun.counselling@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <div id="page-contact" style="display:none">
+  <main style="max-width:1220px;margin:0 auto;padding:70px 40px 90px">
+    <div style="display:grid;grid-template-columns:1fr 0.85fr;gap:56px;align-items:start">
+      <div>
+        <p style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:500;font-size:15px;color:#2E3FCB;margin:0 0 20px">Contact</p>
+        <h1 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:clamp(46px,5.2vw,72px);line-height:1.04;letter-spacing:-0.03em;color:#F1362E;margin:0 0 24px">Let's find <span style="white-space:nowrap;background:url('art/highlight-block-trim.png') 50% 58%/106% 1.05em no-repeat;padding:0 0.1em">a time.</span></h1>
+        <img src="art/underline-trim.png" alt="" style="width:210px;display:block;transform:rotate(-3deg);transform-origin:left center;margin:-6px 0 26px 8px">
+        <p style="font-size:17.5px;font-weight:350;line-height:1.6;max-width:470px;margin:0 0 36px">Write as much or as little as you like. Everything you send stays private, and there's no obligation after the first call.</p>
+        <div style="display:flex;flex-direction:column;gap:18px;max-width:520px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">Your name
+              <input type="text" placeholder="First name is fine" style="border:1.5px solid rgba(20,19,16,0.25);background:transparent;border-radius:12px;padding:14px 16px;font-size:15px;font-weight:350;color:#141310">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">Email
+              <input type="email" placeholder="you@email.com" style="border:1.5px solid rgba(20,19,16,0.25);background:transparent;border-radius:12px;padding:14px 16px;font-size:15px;font-weight:350;color:#141310">
+            </label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500">What's on your mind?
+            <textarea rows="5" placeholder="A sentence is plenty." style="border:1.5px solid rgba(20,19,16,0.25);background:transparent;border-radius:12px;padding:14px 16px;font-size:15px;font-weight:350;color:#141310;resize:vertical"></textarea>
+          </label>
+          <button class="hov2" type="button" onclick="submitForm(event)" style="align-self:flex-start;background:#F1362E;color:#FCF3E3;border:0;font-size:15.5px;font-weight:600;padding:16px 32px;border-radius:999px;cursor:pointer">Send message</button>
+          
+            <p id="sentMsg" style="display:none;margin:0;font-size:14.5px;font-weight:500;color:#2E3FCB">Thank you — this is a demo form. For now, email varun.counselling@gmail.com and you'll hear back within two days.</p>
+          
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <img src="./lyingdown-msc8avqw-m61v.png" alt="Person floating" style="width:100%;display:block">
+        <div style="background:#E9DFBF;border-radius:20px;padding:28px">
+          <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px;margin:0 0 14px">Where to reach me</h2>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:14.5px;font-weight:350;line-height:1.5">
+            <a href="mailto:varun.counselling@gmail.com" style="font-weight:500">varun.counselling@gmail.com</a>
+            <span>Online, or in person by availability</span>
+            <span>Replies within two working days</span>
+          </div>
+        </div>
+        <div style="border:1.5px solid #F1362E;border-radius:20px;padding:24px 28px;font-size:14px;font-weight:350;line-height:1.55">If you need support right now and can't wait for a reply, please contact your local emergency service or a 24-hour helpline.</div>
+      </div>
+    </div>
+  </main>
+  </div>
+
+  <section style="border-top:1px solid rgba(20,19,16,0.12)">
+    <div style="max-width:1220px;margin:0 auto;padding:36px 40px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+      <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#F1362E">Trusted by</span>
+      <a class="hov5" href="https://www.psychologytoday.com/ca/therapists/varun-sarangapani-toronto-on/1674803" target="_blank" rel="noopener" style="display:block"><img src="art/psychology-today-blue.png" alt="Psychology Today profile" style="height:56px;display:block"></a>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(20,19,16,0.12)">
+    <div style="max-width:1220px;margin:0 auto;padding:44px 40px 56px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start">
+      <div>
+        <p style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:18px;margin:0 0 10px">Varun Sarangapani Counselling</p>
+        <p style="margin:0;font-size:14px;font-weight:350;line-height:1.55;max-width:280px">One hour a week that belongs entirely to you.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:14px">
+        <span style="font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;opacity:0.55;margin-bottom:4px">Services</span>
+        <a href="#" onclick="nav('individual',event)" style="color:#141310">Individual Counselling</a>
+        <a href="#" onclick="nav('couples',event)" style="color:#141310">Couples Counselling</a>
+        <a href="#" onclick="nav('meditation',event)" style="color:#141310">Meditation &amp; Mindfulness</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:14px">
+        <span style="font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;opacity:0.55;margin-bottom:4px">Elsewhere</span>
+        <a href="#" onclick="nav('about',event)" style="color:#141310">About</a>
+        <a href="#" onclick="nav('contact',event)" style="color:#141310">Contact</a>
+        <a href="mailto:varun.counselling@gmail.com" style="color:#141310">varun.counselling@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+const PAGES = {
+  individual: {
+    title: 'Individual Counselling',
+    lede: 'Fifty minutes a week, one-to-one, for whatever is taking up the most room in your head. We go at your pace — some weeks are practical, some weeks are just talking.',
+    art: './sleepyguy-mscb9rm8-o1s5.png', listTitle: 'What sessions look like',
+    points: [
+      { h: 'A first, easy conversation', p: 'Twenty free minutes on a call so you can hear my voice and decide if it feels right. No notes taken.' },
+      { h: 'A regular hour that is yours', p: 'Same day, same time. Familiar routine does a surprising amount of the work.' },
+      { h: 'Practical things to try', p: 'When it helps, you leave with something small to notice or practise before the next session.' },
+      { h: 'An honest check-in', p: 'Every few months we look back at what has shifted and decide together what to do next.' }
+    ],
+    facts: ['50 minutes, weekly or bi-weekly', 'Online or in person', 'Sliding scale available', 'Free 20-minute first call'],
+    note: 'Not sure it is for you? The first call is free and costs you nothing but twenty minutes.'
+  },
+  couples: {
+    title: 'Couples Counselling',
+    lede: 'For two people who keep having the same argument in different words. Sessions are even-handed: nobody is the patient and nobody is the problem.',
+    art: './hugging-msc8edb6-76g2.png', listTitle: 'How we work together',
+    points: [
+      { h: 'Both voices, equal time', p: 'We slow the conversation down enough that each of you can finish a sentence.' },
+      { h: 'Finding the real pattern', p: 'Most conflicts run on a loop. Naming the loop is usually more useful than winning the round.' },
+      { h: 'Language you can take home', p: 'Small, specific phrases and repairs that work in a kitchen at 8pm, not only in a session.' },
+      { h: 'Occasional solo sessions', p: 'Sometimes one of you needs a session alone. That is planned openly, never in secret.' }
+    ],
+    facts: ['70 minutes, usually bi-weekly', 'Both partners attend together', 'Sliding scale available', 'Six-session blocks are common'],
+    note: 'Coming in together is often the hardest part. After that it gets easier.'
+  },
+  meditation: {
+    title: 'Meditation & Mindfulness',
+    lede: 'Guided practice for people who have tried an app and quietly given up. Short, plain, and built around a real week rather than an ideal one.',
+    art: './meditate-msc8gd1o-oez5.png', listTitle: 'What you will practise',
+    points: [
+      { h: 'Breathing that actually settles you', p: 'Two or three techniques, learned properly, instead of twenty half-remembered ones.' },
+      { h: 'Noticing without judging', p: 'How to spot a thought spiralling early — before it has taken over the afternoon.' },
+      { h: 'Five-minute versions', p: 'Every practice has a short form for days when there is no time and no quiet room.' },
+      { h: 'Recordings to keep', p: 'You get audio of each guided session so you can practise in the two weeks between.' }
+    ],
+    facts: ['45 minutes, bi-weekly', 'Online or in person, one-to-one', 'Sliding scale available', 'No experience or equipment needed'],
+    note: 'You do not need to be calm to start. That is rather the point.'
+  }
+};
+
+const state = { page: 'home', menu: null, sent: false };
+
+function pageSection(page) {
+  if (page === 'home') return 'page-home';
+  if (page === 'about') return 'page-about';
+  if (page === 'contact') return 'page-contact';
+  if (PAGES[page]) return 'page-detail';
+  return 'page-home';
+}
+
+function fillDetail(d) {
+  document.getElementById('detailTitle').textContent = d.title;
+  document.getElementById('detailLede').textContent = d.lede;
+  document.getElementById('detailListTitle').textContent = d.listTitle;
+  document.getElementById('detailNote').textContent = d.note;
+  const artEl = document.getElementById('detailArt');
+  if (artEl) artEl.src = d.art;
+
+  const ptsEl = document.getElementById('detailPoints');
+  ptsEl.innerHTML = '';
+  d.points.forEach(pt => {
+    const row = document.createElement('div');
+    row.style.cssText = 'border-top:1px solid rgba(20,19,16,0.15);padding-top:16px';
+    const h3 = document.createElement('h3');
+    h3.style.cssText = "font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px;margin:0 0 8px";
+    h3.textContent = pt.h;
+    const p = document.createElement('p');
+    p.style.cssText = 'margin:0;font-size:15px;font-weight:350;line-height:1.6;max-width:520px';
+    p.textContent = pt.p;
+    row.appendChild(h3); row.appendChild(p);
+    ptsEl.appendChild(row);
+  });
+
+  const factsEl = document.getElementById('detailFacts');
+  factsEl.innerHTML = '';
+  d.facts.forEach(fact => {
+    const span = document.createElement('span');
+    span.textContent = fact;
+    factsEl.appendChild(span);
+  });
+}
+
+function render() {
+  const section = pageSection(state.page);
+  ['page-home', 'page-about', 'page-detail', 'page-contact'].forEach(id => {
+    document.getElementById(id).style.display = (id === section) ? '' : 'none';
+  });
+  if (PAGES[state.page]) fillDetail(PAGES[state.page]);
+  document.getElementById('servicesMenu').style.display = state.menu === 'services' ? 'flex' : 'none';
+  document.getElementById('sentMsg').style.display = state.sent ? 'block' : 'none';
+  setupReveal();
+}
+
+function nav(page, e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  state.page = page; state.menu = null; state.sent = false;
+  try { history.replaceState(null, '', '#' + (page === 'home' ? '' : page)); } catch (err) {}
+  window.scrollTo(0, 0);
+  render();
+}
+
+function toggleServices(e) {
+  e.preventDefault(); e.stopPropagation();
+  state.menu = state.menu === 'services' ? null : 'services';
+  render();
+}
+
+function goSpecSection(e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+  state.page = 'home'; state.menu = null;
+  render();
+  setTimeout(() => {
+    const el = document.getElementById('specialities');
+    if (el) window.scrollTo({ top: window.scrollY + el.getBoundingClientRect().top - 110, behavior: 'smooth' });
+  }, 80);
+}
+
+function submitForm(e) {
+  if (e) e.preventDefault();
+  state.sent = true;
+  render();
+}
+
+document.addEventListener('click', () => { if (state.menu) { state.menu = null; render(); } });
+
+// Scroll reveal
+let io, sweep;
+function setupReveal() {
+  if (!('IntersectionObserver' in window)) return;
+  if (!io) {
+    const reveal = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; io.unobserve(el); };
+    io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting || en.boundingClientRect.top < window.innerHeight) reveal(en.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
+    sweep = () => {
+      document.querySelectorAll('section[data-reveal]').forEach(el => {
+        if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight) reveal(el);
+      });
+    };
+    window.addEventListener('scroll', sweep, { passive: true });
+    window.addEventListener('resize', sweep);
+  }
+  document.querySelectorAll('section').forEach(el => {
+    if (el.dataset.reveal) return;
+    el.dataset.reveal = '1';
+    const r = el.getBoundingClientRect();
+    const visible = r.top < window.innerHeight * 0.9;
+    el.style.transition = 'opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1)';
+    if (visible) { el.style.opacity = '1'; el.style.transform = 'none'; return; }
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    io.observe(el);
+  });
+  if (sweep) requestAnimationFrame(sweep);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const h = (location.hash || '').replace('#', '');
+  if (h === 'about' || h === 'contact' || PAGES[h]) state.page = h;
+  render();
+});
+</script>
+
+</body>
+</html>
