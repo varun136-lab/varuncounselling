@@ -432,20 +432,20 @@
 <script>
 const PAGES = {
   individual: {
-    title: 'Individual Counselling',
-    lede: 'Fifty minutes a week, one-to-one, for whatever is taking up the most room in your head. We go at your pace — some weeks are practical, some weeks are just talking.',
-    art: './sleepyguy-mscb9rm8-o1s5.png', listTitle: 'What sessions look like',
+    kicker: 'Services', title: 'Individual Counselling',
+    lede: 'Fifty minutes a week, one-to-one, for whatever is taking up the most room in your head. We stay focused on one thing at a time, because doing one thing twenty times gets you further than doing twenty things once.',
+    art: './sleepyguy-mscb9rm8-o1s5.png', listTitle: 'What a session actually looks like',
     points: [
-      { h: 'A first, easy conversation', p: 'Twenty free minutes on a call so you can hear my voice and decide if it feels right. No notes taken.' },
-      { h: 'A regular hour that is yours', p: 'Same day, same time. Familiar routine does a surprising amount of the work.' },
-      { h: 'Practical things to try', p: 'When it helps, you leave with something small to notice or practise before the next session.' },
-      { h: 'An honest check-in', p: 'Every few months we look back at what has shifted and decide together what to do next.' }
+      { h: 'How was your week?', p: 'We start there. Whatever has been on your mind is a fine place to begin.' },
+      { h: 'What do you want out of today?', p: 'We pick one thing and say it plainly, and it feeds into the overarching goal we set together.' },
+      { h: 'Then we get into it', p: 'Often that means processing feelings you have not had room for. Sometimes it is the body and the breath, sometimes the habits underneath.' },
+      { h: 'You leave with one thing to try', p: 'Small and specific. ' }
     ],
     facts: ['50 minutes, weekly or bi-weekly', 'Online or in person', 'Sliding scale available', 'Free 20-minute first call'],
     note: 'Not sure it is for you? The first call is free and costs you nothing but twenty minutes.'
   },
   couples: {
-    title: 'Couples Counselling',
+    kicker: 'Services', title: 'Couples Counselling',
     lede: 'For two people who keep having the same argument in different words. Sessions are even-handed: nobody is the patient and nobody is the problem.',
     art: './hugging-msc8edb6-76g2.png', listTitle: 'How we work together',
     points: [
@@ -458,7 +458,7 @@ const PAGES = {
     note: 'Coming in together is often the hardest part. After that it gets easier.'
   },
   meditation: {
-    title: 'Meditation & Mindfulness',
+    kicker: 'Services', title: 'Meditation & Mindfulness',
     lede: 'Guided practice for people who have tried an app and quietly given up. Short, plain, and built around a real week rather than an ideal one.',
     art: './meditate-msc8gd1o-oez5.png', listTitle: 'What you will practise',
     points: [
@@ -603,6 +603,5 @@ document.addEventListener('DOMContentLoaded', () => {
   render();
 });
 </script>
-
 </body>
 </html>
