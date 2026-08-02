@@ -32,6 +32,7 @@
     h2 { font-size: 29px !important; line-height: 1.12 !important; }
     h3 { font-size: 19px !important; }
     img[style*="position:absolute"], img[style*="position: absolute"] { display: none !important; }
+    div[style*="position:absolute"][style*="pointer-events:none"] { display: none !important; }
     div[style*="padding:52px 60px"], div[style*="padding: 52px 60px"],
     div[style*="padding:48px 56px"], div[style*="padding: 48px 56px"],
     div[style*="padding:44px"], div[style*="padding: 44px"] { padding: 26px 22px !important; }
@@ -514,8 +515,8 @@ function render() {
     document.getElementById(id).style.display = (id === section) ? '' : 'none';
   });
   if (PAGES[state.page]) fillDetail(PAGES[state.page]);
-  document.getElementById('servicesMenu').style.display = state.menu === 'services' ? 'flex' : 'none';
-  document.getElementById('mobilePanel').style.display = state.menu === 'mobile' ? 'flex' : 'none';
+  document.getElementById('servicesMenu').style.setProperty('display', state.menu === 'services' ? 'flex' : 'none', 'important');
+  document.getElementById('mobilePanel').style.setProperty('display', state.menu === 'mobile' ? 'flex' : 'none', 'important');
   document.getElementById('sentMsg').style.display = state.sent ? 'block' : 'none';
   setupReveal();
 }
