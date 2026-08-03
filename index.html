@@ -88,7 +88,18 @@
           
         </div>
 
-        <a href="#specialities" onclick="goSpecSection(event)" style="font-size:14.5px;font-weight:500;color:#141310">Specialization</a>
+        <div style="position:relative">
+          <button onclick="toggleSpec(event)" style="display:flex;align-items:center;gap:7px;background:none;border:0;padding:0;font-size:14.5px;font-weight:500;color:#141310;cursor:pointer">Specialization<span style="font-size:11px;opacity:0.55">▾</span></button>
+          
+            <div id="specMenu" style="display:none;position:absolute;top:34px;right:-18px;width:320px;background:#FCF3E3;border:1.5px solid #F1362E;border-radius:16px;padding:10px;flex-direction:column;box-shadow:6px 8px 0 rgba(46,63,203,0.14)">
+              <a class="hov0" href="#" onclick="nav('anxiety',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Anxiety, Panic &amp; Avoidance<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">Racing thoughts, dread, avoidance</span></a>
+              <a class="hov0" href="#" onclick="nav('depression',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Depression Counselling<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">When everything takes more effort</span></a>
+              <a class="hov0" href="#" onclick="nav('mens',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Men's Mental Health<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">Handling it alone for a long time</span></a>
+              <a class="hov0" href="#" onclick="nav('emdr',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">EMDR<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">For memories still held in the body</span></a>
+              <a class="hov0" href="#" onclick="nav('grief',event)" style="padding:11px 14px;border-radius:11px;color:#141310;font-size:14px;font-weight:500">Grief &amp; Life Transitions<span style="display:block;font-size:11.5px;font-weight:350;opacity:0.6;margin-top:2px">Loss, with or without a funeral</span></a>
+            </div>
+          
+        </div>
 
         <a href="#" onclick="nav('contact',event)" style="font-size:14.5px;font-weight:500;color:#141310">Contact</a>
         <a class="hov1" href="#contact" onclick="nav('contact',event)" style="background:#F1362E;color:#FCF3E3;font-size:14.5px;font-weight:600;padding:12px clamp(14px,1.5vw,22px);border-radius:999px;white-space:nowrap;flex:none">Book a Session</a>
@@ -102,7 +113,12 @@
           <a href="#" onclick="nav('individual',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Individual Counselling</a>
           <a href="#" onclick="nav('couples',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Couples Counselling</a>
           <a href="#" onclick="nav('meditation',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Meditation &amp; Mindfulness</a>
-          <a href="#specialities" onclick="goSpecSection(event)" style="padding:13px 4px;font-size:16px;font-weight:500;color:#141310;border-top:1px solid rgba(20,19,16,0.09);margin-top:6px">Specialization</a>
+          <span style="padding:14px 4px 4px;font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(20,19,16,0.45);border-top:1px solid rgba(20,19,16,0.09);margin-top:6px">Specialization</span>
+          <a href="#" onclick="nav('anxiety',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Anxiety, Panic &amp; Avoidance</a>
+          <a href="#" onclick="nav('depression',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Depression Counselling</a>
+          <a href="#" onclick="nav('mens',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Men's Mental Health</a>
+          <a href="#" onclick="nav('emdr',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">EMDR</a>
+          <a href="#" onclick="nav('grief',event)" style="padding:11px 4px 11px 14px;font-size:15.5px;font-weight:500;color:#141310">Grief &amp; Life Transitions</a>
           <a href="#" onclick="nav('contact',event)" style="padding:13px 4px;font-size:16px;font-weight:500;color:#141310">Contact</a>
           <a href="#contact" onclick="nav('contact',event)" style="margin:10px 0 6px;text-align:center;background:#F1362E;color:#FCF3E3;font-size:16px;font-weight:600;padding:15px 22px;border-radius:999px">Book a Session</a>
         </div>
@@ -128,19 +144,19 @@
         <img src="art/redsquiggle.png" alt="" style="position:absolute;bottom:-46px;right:-24px;width:96px;z-index:2">
         <img src="art/redasterix.png" alt="" style="position:absolute;top:-30px;right:26px;width:72px;z-index:2">
         <img src="./best-msca6nrq-jf9y.png" alt="Varun at a table" style="width: 100%; display: block; object-fit: fill">
-        <div style="position: absolute; left: 17px; background: #E9DFBF; border-radius: 14px; padding: 16px 20px; max-width: 230px; font-size: 15px; font-weight: 400; line-height: 1.45; transform: rotate(-2deg); top: 288px; text-align: center">No pressure, no scripts. We start wherever you are.</div>
+        <div style="position: absolute; left: 17px; background: #E9DFBF; border-radius: 14px; padding: 16px 20px; max-width: 230px; font-size: 15px; font-weight: 400; line-height: 1.45; transform: rotate(-2deg); top: 288px; text-align: center">Registered Psychotherapist (Q)</div>
       </div>
     </section>
 
     <section style="max-width: 1220px; margin: 0 auto; padding: 50px 40px; position: relative">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
         <div style="background:#E9DFBF;border-radius:22px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px">
-          <span style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:26px;color:#F1362E">One-to-one</span>
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:26px;color:#F1362E">Individual</span>
           <p style="margin:0;font-size:14.5px;font-weight:350;line-height:1.55">Weekly fifty minute sessions to talk things through with someone who is only there for you.</p>
           <a href="#" onclick="nav('individual',event)" style="margin-top:auto;font-size:14px;font-weight:600">Read more →</a>
         </div>
         <div style="background:#F1362E;border-radius:22px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px;color:#FCF3E3">
-          <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 26px">For couples</span>
+          <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 26px">Couples</span>
           <p style="margin:0;font-size:14.5px;font-weight:350;line-height:1.55">A steady, even-handed space for two people who want to understand each other better.</p>
           <a class="hov3" href="#" onclick="nav('couples',event)" style="margin-top:auto;font-size:14px;font-weight:600;color:#FCF3E3">Read more →</a>
         </div>
@@ -195,7 +211,7 @@
         </div>
 
         <div style="margin-top:44px;padding-top:38px;border-top:1px solid rgba(20,19,16,0.14)">
-          <p style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#2E3FCB;margin:0 0 8px">How the work splits</p>
+          <p style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2E3FCB; margin: 0 0 8px; text-align: center">HOW THE WORK WORKS</p>
 
           <div style="background:#FCF3E3;border-radius:20px;padding:26px 28px;margin-bottom:22px;display:flex;flex-direction:column;gap:10px">
             <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #F1362E; text-align: center">First, always</span>
@@ -207,11 +223,11 @@
             <div style="background:#FCF3E3;border-radius:20px;padding:26px 28px;display:flex;flex-direction:column;gap:10px">
               <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #F1362E; text-align: center">Route one</span>
               <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 26px; line-height: 1.15; color: #141310; text-align: center">Somatic</span>
-              <span style="font-size:15.5px;font-weight:350;line-height:1.65">Starting with the body. Breath, tension, and what your nervous system does before your thoughts catch up.</span>
+              <span style="font-size: 15.5px; font-weight: 350; line-height: 1.65; text-align: center">Starting with the body. Breath, tension, and what your nervous system does before your thoughts catch up.</span>
             </div>
             <div style="background:#FCF3E3;border-radius:20px;padding:26px 28px;display:flex;flex-direction:column;gap:10px">
               <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #F1362E; text-align: center">Route two</span>
-              <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 26px; line-height: 1.15; color: #141310; text-align: center">Behavioural</span><span style="font-size:15.5px;font-weight:350;line-height:1.65">Starting with the patterns. The thoughts, habits, and small daily choices that keep the pattern running.</span>
+              <span style="font-family: 'Heading Now','Archivo',sans-serif; font-style: italic; font-weight: 600; font-size: 26px; line-height: 1.15; color: #141310; text-align: center">Behavioural</span><span style="font-size: 15.5px; font-weight: 350; line-height: 1.65; text-align: center">Starting with the patterns. The thoughts, habits, and small daily choices that keep the pattern running.</span>
               
             </div>
           </div>
@@ -231,23 +247,27 @@
         <img src="art/squiggle.png" alt="" style="width:120px;flex:none">
       </div>
       
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
-        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Anxiety &amp; everyday stress</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:20px">
+        <a class="hov4" href="#" onclick="nav('anxiety',event)" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Anxiety, Panic &amp; Avoidance</span>
           <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">Racing thoughts, tight chest, Sunday-night dread.</span>
-        </div>
-        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Relationships &amp; family</span>
-          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">The same argument, on repeat, for years.</span>
-        </div>
-        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Trauma</span>
-          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">What happened, and what it left behind.</span>
-        </div>
-        <div class="hov4" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">PTSD</span>
-          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">A body still braced long after the event.</span>
-        </div>
+        </a>
+        <a class="hov4" href="#" onclick="nav('depression',event)" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Depression</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">When everything takes more effort than it should.</span>
+        </a>
+        <a class="hov4" href="#" onclick="nav('mens',event)" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Men's Mental Health</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">Handling it alone, and noticing the cost.</span>
+        </a>
+        <a class="hov4" href="#" onclick="nav('emdr',event)" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">EMDR</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">For memories the body still holds as present.</span>
+        </a>
+        <a class="hov4" href="#" onclick="nav('grief',event)" style="border:1.5px solid rgba(20,19,16,0.18);border-radius:20px;padding:26px 24px 28px;color:#141310;display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px">Grief &amp; Life Transitions</span>
+          <span style="font-size:13.5px;font-weight:350;line-height:1.5;opacity:0.8">Losses with a funeral, and losses without one.</span>
+        </a>
       </div>
     </section>
 
@@ -359,6 +379,78 @@
   </main>
   </div>
 
+  <div id="page-spec" style="display:none">
+  <main>
+    <section style="max-width:1220px;margin:0 auto;padding:64px 40px 20px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center">
+      <div>
+        <p style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:500;font-size:15px;color:#2E3FCB;margin:0 0 16px">Specialization</p>
+        <h1 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:clamp(42px,4.6vw,62px);line-height:1.04;letter-spacing:-0.03em;color:#F1362E;margin:0 0 22px;text-wrap:pretty" id="specTitle"></h1>
+        <p style="font-size:19px;font-weight:350;line-height:1.6;margin:0 0 18px;max-width:540px;text-wrap:pretty" id="specLede"></p>
+        <p style="font-size:16px;font-weight:350;line-height:1.7;margin:0 0 30px;max-width:540px;text-wrap:pretty" id="specIntro"></p>
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <a class="hov2" href="#contact" onclick="nav('contact',event)" style="background:#F1362E;color:#FCF3E3;font-size:15px;font-weight:600;padding:15px 28px;border-radius:999px">Book now</a>
+          <a href="#" onclick="nav('home',event)" style="font-size:15px;font-weight:500;color:#141310;border-bottom:1.5px solid #F1362E">Back home</a>
+          <img src="art/s-squiggle.png" alt="" style="width:58px">
+        </div>
+      </div>
+      <div style="position:relative">
+        <img src="art/redsquiggle.png" alt="" style="position:absolute;top:-8px;left:-30px;width:70px;z-index:2">
+        <img id="specArt" src="" alt="Illustration" style="width:100%;display:block">
+      </div>
+    </section>
+
+    <section style="max-width:1220px;margin:0 auto;padding:50px 40px">
+      <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start">
+        <div>
+          <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:42px;line-height:1.05;color:#F1362E;margin:0 0 16px">What I help with</h2>
+          
+        </div>
+        <div id="specHelp" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"></div>
+      </div>
+    </section>
+
+    <section style="max-width:1220px;margin:0 auto;padding:50px 40px">
+      <div style="background:#E9DFBF;border-radius:28px;padding:52px 56px">
+        <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:42px;line-height:1.05;color:#F1362E;margin:0 0 10px">The tools</h2>
+        
+        <div id="specApproach" style="display:grid;grid-template-columns:1fr 1fr;gap:20px"></div>
+      </div>
+    </section>
+
+    <section style="max-width:1220px;margin:0 auto;padding:50px 40px">
+      <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start">
+        <div>
+          <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:42px;line-height:1.05;color:#F1362E;margin:0 0 16px">Who this is for</h2>
+          <p style="font-size:16px;font-weight:350;line-height:1.65;margin:0;max-width:340px">If you recognise yourself in more than one of these, you are in the right place.</p>
+        </div>
+        <div id="specForWhom" style="display:flex;flex-direction:column;gap:14px"></div>
+      </div>
+    </section>
+
+    <section style="max-width:1220px;margin:0 auto;padding:50px 40px 40px">
+      <div style="display:flex;align-items:center;gap:24px;margin:0 0 32px">
+        <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:42px;line-height:1.05;color:#F1362E;margin:0">Questions people ask</h2>
+        <img src="art/squiggle.png" alt="" style="width:110px;flex:none">
+      </div>
+      <div id="specFaq" style="display:grid;grid-template-columns:1fr 1fr;gap:20px 40px"></div>
+    </section>
+
+    <section style="max-width:1220px;margin:0 auto;padding:30px 40px 90px">
+      <div style="position:relative;background:#F1362E;border-radius:28px;padding:48px 56px;color:#FCF3E3;display:grid;grid-template-columns:1fr 0.7fr;gap:30px;align-items:center">
+        <img src="art/asterix.png" alt="" style="position:absolute;top:-30px;left:-26px;width:72px">
+        <div>
+          <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:36px;line-height:1.1;margin:0 0 14px">Start with a free twenty minutes.</h2>
+          
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+          <a class="hov1" href="#contact" onclick="nav('contact',event)" style="background:#FCF3E3;color:#F1362E;font-size:15.5px;font-weight:600;padding:15px 30px;border-radius:999px">Book now</a>
+          <a href="mailto:varun.counselling@gmail.com" style="font-size:14.5px;font-weight:600;color:#FCF3E3;border-bottom:1.5px solid #FCF3E3">varun.counselling@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+
   <div id="page-contact" style="display:none">
   <main style="max-width:1220px;margin:0 auto;padding:70px 40px 90px">
     <div style="display:grid;grid-template-columns:1fr 0.85fr;gap:56px;align-items:start">
@@ -409,7 +501,7 @@
   </section>
 
   <footer style="border-top:1px solid rgba(20,19,16,0.12)">
-    <div style="max-width:1220px;margin:0 auto;padding:44px 40px 56px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start">
+    <div style="max-width:1220px;margin:0 auto;padding:44px 40px 56px;display:grid;grid-template-columns:1.3fr 1fr 1.15fr 1fr;gap:36px;align-items:start">
       <div>
         <p style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:18px;margin:0 0 10px">Varun Sarangapani Counselling</p>
         <p style="margin:0;font-size:14px;font-weight:350;line-height:1.55;max-width:280px">One hour a week that belongs entirely to you.</p>
@@ -419,6 +511,14 @@
         <a href="#" onclick="nav('individual',event)" style="color:#141310">Individual Counselling</a>
         <a href="#" onclick="nav('couples',event)" style="color:#141310">Couples Counselling</a>
         <a href="#" onclick="nav('meditation',event)" style="color:#141310">Meditation &amp; Mindfulness</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:14px">
+        <span style="font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;opacity:0.55;margin-bottom:4px">Specialization</span>
+        <a href="#" onclick="nav('anxiety',event)" style="color:#141310">Anxiety, Panic &amp; Avoidance</a>
+        <a href="#" onclick="nav('depression',event)" style="color:#141310">Depression Counselling</a>
+        <a href="#" onclick="nav('mens',event)" style="color:#141310">Men's Mental Health</a>
+        <a href="#" onclick="nav('emdr',event)" style="color:#141310">EMDR</a>
+        <a href="#" onclick="nav('grief',event)" style="color:#141310">Grief &amp; Life Transitions</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:9px;font-size:14px">
         <span style="font-size:12px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;opacity:0.55;margin-bottom:4px">Elsewhere</span>
@@ -472,12 +572,242 @@ const PAGES = {
   }
 };
 
+const SPECS = {
+  anxiety: {
+    title: 'Anxiety, Panic & Avoidance Treatment',
+    art: './lyingdown-msc8avqw-m61v.png',
+    lede: 'Compassionate, evidence-based therapy for anxiety, overwhelming stress, panic attacks, and avoidance patterns.',
+    intro: "I work with CBT, DBT, mindfulness-based therapy, trauma-informed care, and nervous-system stabilisation to help you understand your symptoms, break avoidance cycles, and regain confidence. Whether it is constant worry, panic episodes, health anxiety, social anxiety, or fear-based avoidance of driving, work, speaking, or leaving home \u2014 your plan is personalised, practical, and grounded in approaches that have actually been tested.",
+    helpIntro: 'The things people most often bring to these sessions.',
+    help: [
+      'Generalised anxiety and chronic worry',
+      'Panic attacks and the fear of losing control',
+      'Social anxiety and performance fears',
+      'Health anxiety',
+      'Work-related anxiety and burnout',
+      'Trauma-linked anxiety, including after a motor vehicle accident',
+      'Driving anxiety and avoidance after an accident',
+      'Avoidance: phone calls, appointments, public spaces, relationships',
+      'School and academic anxiety'
+    ],
+    approach: [
+      { h: 'Cognitive Behavioural Therapy (CBT)', p: 'Identify anxious thoughts, challenge fear-based beliefs, and replace unhelpful patterns with grounded, realistic strategies.' },
+      { h: 'Exposure & Response Prevention (ERP)', p: 'Gradual, supported re-entry into avoided situations to retrain the fear system \u2014 paced at your comfort level.' },
+      { h: 'Somatic & nervous-system regulation', p: 'Breathing, grounding, mindfulness, and neuroscience-informed tools to settle the physical response.' },
+      { h: 'Trauma-informed processing, if needed', p: 'Gentle, paced approaches for anxiety that developed after trauma, loss, or an accident.' },
+      { h: 'Skills for daily life', p: 'Structure, routines, sleep support, and coping skills that translate into real-world change.' }
+    ],
+    forWhom: [
+      'Working adults balancing stress, family, and professional responsibilities',
+      'Students and young adults facing academic or social anxiety',
+      'New Canadians navigating culturally specific stress',
+      'Motor vehicle accident clients with trauma-triggered anxiety',
+      'Parents, caregivers, and helping professionals',
+      'Teens and young adults who want practical tools for confidence and independence'
+    ],
+    faq: [
+      { q: 'How do I know if my anxiety is severe enough for therapy?', a: 'If worry, stress, or panic is affecting your sleep, relationships, work, or your ability to enjoy life, therapy can help. You do not need a diagnosis to start.' },
+      { q: 'What is the best treatment for panic attacks?', a: 'CBT combined with exposure work and nervous-system regulation has the strongest research support. We tailor it to your comfort level.' },
+      { q: 'Does avoidance really make anxiety worse?', a: 'Yes. Avoidance reduces fear in the moment but strengthens anxiety over time. Therapy helps you break that cycle safely and gradually.' },
+      { q: 'Do you help with driving anxiety or fear after an accident?', a: 'Yes. That includes trauma-informed anxiety therapy and return-to-driving readiness work.' },
+      { q: 'Can therapy help if medication is not working?', a: 'Yes. Therapy can complement medication or stand on its own, and many people benefit from both together.' },
+      { q: 'Do you offer online sessions?', a: 'Yes \u2014 secure video sessions, or in person in Toronto by availability.' },
+      { q: 'Will therapy give me tools I can use immediately?', a: 'Most people start using practical anxiety-regulation tools within the first one or two sessions.' },
+      { q: 'I feel ashamed about my anxiety. Is therapy judgment-free?', a: 'Completely. Anxiety is extremely common and highly treatable, and nothing you bring here will be met with judgment.' }
+    ]
+  },
+  depression: {
+    title: 'Depression Counselling',
+    art: './sleepyguy-msc88vs9-o89w.png',
+    lede: 'Compassionate, evidence-based support to help you regain clarity, steadiness, and hope.',
+    intro: "Depression can feel heavy, isolating, and overwhelming \u2014 but you do not have to navigate it alone. I offer trauma-informed, evidence-based depression treatment shaped around your lived experience. Whether it is persistent low mood, emotional numbness, burnout, fatigue, racing thoughts, or lost motivation, we work out what is happening, rebuild your coping capacity, and reconnect you with meaning. I draw on CBT, DBT, ACT, mindfulness-based approaches, and nervous-system stabilisation to break the depressive loop and address what sits underneath it \u2014 without judgment or pressure.",
+    helpIntro: 'The things people most often bring to these sessions.',
+    help: [
+      'Persistent sadness or heaviness',
+      'Feeling numb, disconnected, or hopeless',
+      'Loss of energy, burnout, or emotional exhaustion',
+      'Sleep changes \u2014 insomnia or oversleeping',
+      'Difficulty focusing or making decisions',
+      'Loss of motivation or interest in daily life',
+      'Irritability, anger, or emotional overwhelm',
+      'Depression linked to trauma, chronic stress, or major life change',
+      'Postpartum and reproductive-related depression',
+      'Depression alongside anxiety, ADHD, chronic pain, or relationship stress'
+    ],
+    approach: [
+      { h: 'CBT for depression', p: 'Challenge negative thought patterns, reduce rumination, and build healthier cognitive habits.' },
+      { h: 'Emotion-focused, trauma-informed care', p: 'We explore root causes with compassion \u2014 including trauma, attachment wounds, and chronic stress.' },
+      { h: 'Behavioural activation', p: 'Small, realistic steps that restart momentum when life feels stuck.' },
+      { h: 'Mind-body regulation', p: 'Breathwork, grounding, and nervous-system stabilisation for emotional balance.' },
+      { h: 'Collaborative and client-led', p: 'You set the pace. I work with your lived experience, cultural background, and existing strengths.' }
+    ],
+    forWhom: [
+      'Adults who have been quietly coping for months or years',
+      'People coming out of burnout or a long period of overwork',
+      'New parents experiencing low mood',
+      'Students and young adults who have lost momentum',
+      'People whose depression followed grief, illness, or an accident',
+      'Anyone whose medication helps but is not enough on its own'
+    ],
+    faq: [
+      { q: 'Is depression treatable?', a: 'Yes. Evidence-based therapies show strong outcomes across many forms of depression, including chronic, trauma-related, seasonal, and postpartum.' },
+      { q: 'Do I need a diagnosis to start therapy?', a: 'No. Many people begin counselling before any formal diagnosis, and support is available at any stage.' },
+      { q: 'Is therapy or medication better for depression?', a: 'Both can work. Some people do well with therapy alone, others combine the two, and I am happy to work alongside your physician or psychiatrist.' },
+      { q: 'How long does depression therapy take?', a: 'It depends on intensity and circumstances. Many people notice improvement within six to ten sessions, while deeper work takes longer.' },
+      { q: 'Does this help with burnout or chronic stress?', a: 'Yes. Burnout and depression overlap heavily, and therapy helps clarify what you are actually dealing with and build a recovery plan.' },
+      { q: 'What if I do not have the energy for therapy?', a: 'That is expected, and we plan around it. Early sessions ask very little of you between meetings.' }
+    ]
+  },
+  mens: {
+    title: "Men's Mental Health Counselling",
+    art: './sitting-msc8k5b5-d4sy.png',
+    lede: 'Supporting men through stress, identity, relationships, and emotional health \u2014 without judgment, pressure, or stigma.',
+    intro: 'Many men carry emotional pain quietly, balancing work, family responsibilities, cultural expectations, and private struggles without a safe place to talk. I offer confidential, culturally aware, and practical support for stress, anger, burnout, relationship difficulties, trauma, grief, anxiety, and questions of identity. Sessions are private and goal-oriented, focused on building resilience, emotional regulation, confidence, and healthier ways of relating to yourself and the people around you.',
+    helpIntro: 'The things men most often bring to these sessions.',
+    help: [
+      'Work-related stress, burnout, and performance pressure',
+      'Anger, irritability, and emotional shutdown',
+      'Relationship difficulties and communication',
+      'Identity, masculinity, and role expectations',
+      'Anxiety, panic, and overthinking',
+      'Low motivation, numbness, and exhaustion',
+      'Trauma, childhood wounds, and abandonment',
+      'Grief, loss, separation, and divorce',
+      'Shame, guilt, and perfectionism',
+      'Fatherhood stress and support for new dads',
+      'Sexual health, intimacy, and connection'
+    ],
+    approach: [
+      { h: 'Practical and strengths-focused', p: 'Tools for self-regulation, communication, and getting a handle on emotions rather than being run by them.' },
+      { h: 'Evidence-based', p: 'CBT, DBT, ACT, EMDR-informed and trauma-informed approaches, chosen to fit the problem in front of us.' },
+      { h: 'A genuinely non-judgmental space', p: 'Particularly for men who have never done therapy before and are not sure what they are supposed to say.' },
+      { h: 'Culturally responsive', p: 'Support for Canadian-born men, immigrants, BIPOC men, LGBTQ2S+ men, and men navigating cultural or gender-role pressure.' },
+      { h: 'Inside work and outside strategy', p: 'We work on what is happening internally and on the practical, real-world moves that go with it.' }
+    ],
+    forWhom: [
+      'Men who have never spoken to a therapist before',
+      'Professionals, business owners, and men under sustained performance pressure',
+      'Fathers, partners, and men balancing several roles at once',
+      'Immigrants and men supporting families here and abroad',
+      'First responders, healthcare workers, and tradespeople',
+      'Men navigating separation, divorce, or custody',
+      'Anyone who does not know what to say yet \u2014 showing up is enough'
+    ],
+    faq: [
+      { q: 'Why do men struggle to seek therapy?', a: 'Many men grow up with the message not to talk about feelings, which leads to silence and private suffering. Therapy is a confidential place to unpack pressure, shame, or overwhelm without judgment.' },
+      { q: 'What do men usually bring to counselling?', a: 'Most commonly stress, burnout, relationship issues, anger, anxiety, performance pressure, trauma, sexual health concerns, and questions of identity.' },
+      { q: 'Do I need to be emotional to benefit from therapy?', a: 'No. Many men start out feeling disconnected from their emotions. We meet you where you are and build emotional literacy at a pace that feels safe.' },
+      { q: 'Is this appropriate for high-achieving men?', a: 'Yes. Many of the men I see are professionals, business owners, healthcare workers, entrepreneurs, and fathers balancing several roles.' },
+      { q: 'Do you work with burnout and job stress?', a: 'Yes \u2014 practical strategies for stress management, boundary-setting, work-life balance, and reducing emotional exhaustion.' },
+      { q: 'Is this confidential?', a: 'Yes. Everything discussed in session is private under CRPO standards of practice, with rare legal exceptions I explain up front.' }
+    ]
+  },
+  emdr: {
+    title: 'EMDR',
+    art: './journal-msc79ybb-kzsj.png',
+    lede: 'A powerful, evidence-based therapy that helps the brain heal from trauma, distressing memories, and overwhelming emotional experiences.',
+    intro: "EMDR is a structured approach designed to process painful memories, reduce emotional distress, and help you move forward with clarity. Unlike traditional talk therapy, it uses bilateral stimulation \u2014 eye movements, tapping, or sound \u2014 to support your brain's natural healing process, letting stuck or traumatic experiences be reprocessed safely. It is widely used for PTSD, complex trauma, anxiety, panic, chronic stress, childhood trauma, phobias, grief, and emotional triggers, and it is often the preferred option for people who find talking about trauma difficult or who feel stuck after other approaches.",
+    helpIntro: 'What EMDR is commonly used for.',
+    help: [
+      'PTSD and trauma, single-incident or complex',
+      'Childhood trauma, emotional neglect, and attachment wounds',
+      'Panic attacks and anxiety',
+      'Social anxiety and performance fears',
+      'Flashbacks, nightmares, and intrusive memories',
+      'Shame, guilt, and self-criticism from past experiences',
+      'Grief and loss',
+      'Medical trauma, birth trauma, and accidents',
+      'Phobias \u2014 driving, flying, needles, and others',
+      'Emotional overwhelm, irritability, and stress reactivity',
+      'Low self-esteem, people-pleasing, and internalised beliefs',
+      'Relationship triggers and trauma-related conflict'
+    ],
+    approachIntro: 'EMDR follows an eight-phase model grounded in neuroscience and memory processing. I guide you through each stage at a safe, comfortable pace. It is not about reliving the trauma \u2014 it is about reducing the emotional intensity so the memory loses its power over you.',
+    approach: [
+      { h: '1. History & treatment planning', p: 'We explore your goals, your triggers, and the memories or experiences that feel stuck.' },
+      { h: '2. Preparation & stabilisation', p: 'We build coping tools, grounding strategies, and emotional safety before any processing begins.' },
+      { h: '3. Assessment', p: 'We identify the target memory along with the body sensations, emotions, and negative beliefs attached to it.' },
+      { h: '4. Desensitisation', p: 'Eye movements, tapping, or auditory tones help the brain process the memory without overwhelm.' },
+      { h: '5. Installation of positive beliefs', p: 'We strengthen new, healthier beliefs to replace the old trauma-driven ones.' },
+      { h: '6. Body scan', p: 'We check how the memory sits in your body and process anything still lingering there.' },
+      { h: '7. Closure', p: 'You leave every session grounded, safe, and regulated. Nothing ends mid-wave.' },
+      { h: '8. Re-evaluation', p: 'At the start of each new session we review progress and decide the next step together.' }
+    ],
+    forWhom: [
+      'Adults recovering from trauma or emotional wounds',
+      'People wanting deeper processing than talk therapy has offered',
+      'Anyone regularly triggered by past experiences',
+      'Survivors of motor vehicle accidents, assault, or medical trauma',
+      'People with chronic anxiety, fear, or negative self-beliefs',
+      'First responders, healthcare workers, and frontline professionals',
+      'Anyone trying to break long-standing patterns rooted in early experience'
+    ],
+    faq: [
+      { q: 'Does EMDR really work?', a: 'Yes. It is strongly supported by research and recommended for trauma treatment by bodies including the World Health Organization.' },
+      { q: 'Do I need to talk about my trauma in detail?', a: 'No. EMDR does not require detailed retelling, which makes it well suited to people who find storytelling overwhelming or retraumatising.' },
+      { q: 'How many sessions will I need?', a: 'It varies. A single event often processes in six to ten sessions; complex trauma usually needs longer-term work.' },
+      { q: 'Is EMDR safe online?', a: 'Yes. It can be delivered effectively over secure video using visual or auditory bilateral stimulation.' },
+      { q: 'Will I feel overwhelmed or activated?', a: 'I pace the work carefully and we prepare grounding tools first, so you stay regulated and safe throughout.' },
+      { q: 'Can EMDR help with anxiety or panic attacks?', a: 'Yes. It can target both the past events that created the anxiety and the beliefs that keep it running.' }
+    ]
+  },
+  grief: {
+    title: 'Grief, Ambiguous Loss & Life Transitions Counselling',
+    art: './mirror-msc7po70-dme9.png',
+    lede: 'Healing after loss does not follow a timeline \u2014 and your grief deserves space, compassion, and support.',
+    intro: "I offer counselling for all forms of grief: deaths, sudden loss, medical trauma, pregnancy loss, relationship endings, family estrangement, immigration-related grief, and the particular pain of ambiguous loss, where closure is missing, unclear, or impossible. Whether the loss is recent or years old, grief affects mood, identity, energy, relationships, and daily functioning. Together we make sense of your grief process, reduce the overwhelm, and rebuild a sense of meaning that honours what you have lost while supporting the life you are still building.",
+    helpIntro: 'The kinds of loss people bring here.',
+    help: [
+      'Bereavement, expected or sudden',
+      'Complicated or prolonged grief',
+      'Trauma-related grief \u2014 ICU, accidents, sudden events',
+      'Ambiguous loss: someone emotionally but not physically gone',
+      'Dementia and cognitive decline in a loved one',
+      'Estrangement and family cutoff',
+      'Adoption-related loss',
+      'Chronic or progressive illness',
+      'Living with a partner\u2019s addiction or untreated mental illness',
+      'Immigration grief and cultural displacement',
+      'Grief after divorce or a relationship breakdown',
+      'Spiritual, existential, and identity-based grief'
+    ],
+    approach: [
+      { h: 'Grief-informed CBT', p: 'Working with the thoughts and guilt that keep grief locked in place, without arguing you out of your feelings.' },
+      { h: 'Meaning-centred and narrative therapy', p: 'Making sense of the story, and finding meaning that honours the loss rather than tidying it away.' },
+      { h: 'ACT and compassion-focused therapy', p: 'Room for pain and for living alongside it, with less self-blame in the middle.' },
+      { h: 'Emotion-focused therapy', p: 'Letting the full range \u2014 sadness, relief, anger, guilt \u2014 be present without ranking any of it.' },
+      { h: 'Trauma-informed techniques', p: 'For grief that arrives with shock, images, or a body still braced from how it happened.' },
+      { h: 'Faith and culture, where you want it', p: 'Spiritually grounded or faith-integrated work if that is part of how you heal. I follow your pace and never push you to move on.' }
+    ],
+    forWhom: [
+      'People who feel stuck in grief',
+      'Anyone feeling anxious, numb, guilty, or angry after a loss',
+      'People who cannot make sense of what happened',
+      'Anyone carrying a loss others around them do not understand',
+      'People whose grief is complicated by a difficult relationship',
+      'Those living with estrangement or a parent-child cutoff',
+      'Anyone who has lost someone who is still physically here',
+      'People whose distress resurfaces at anniversaries and reminders'
+    ],
+    faq: [
+      { q: 'What is ambiguous loss?', a: 'It is loss without closure \u2014 someone physically present but psychologically absent, as with dementia or addiction, or physically absent but emotionally present, as with estrangement or a missing person. The defining feature is chronic uncertainty.' },
+      { q: 'How is grief counselling different from regular therapy?', a: 'It is built specifically for the emotional, cognitive, spiritual, and relational effects of loss, using frameworks for meaning-making, memory integration, and coping.' },
+      { q: 'Do I need to have lost someone to come?', a: 'No. Loss also includes divorce, infertility, immigration, identity transitions, and chronic illness.' },
+      { q: 'Is online grief counselling effective?', a: 'Yes. Research shows virtual grief therapy works as well as in person, and it lets you do this from home.' },
+      { q: 'Can I bring faith, spirituality, or cultural tradition into this?', a: 'Absolutely. I work respectfully with religious and non-religious healing traditions alike.' },
+      { q: 'It has been years. Is it too late?', a: 'No. Grief does not expire, and delayed grief is extremely common.' },
+      { q: 'Is this covered by insurance?', a: 'Most extended health plans cover Registered Psychotherapists. Worth checking your specific plan before we start.' }
+    ]
+  }
+};
+
 const state = { page: 'home', menu: null, sent: false };
 
 function pageSection(page) {
   if (page === 'home') return 'page-home';
   if (page === 'about') return 'page-about';
   if (page === 'contact') return 'page-contact';
+  if (typeof SPECS !== 'undefined' && SPECS[page]) return 'page-spec';
   if (PAGES[page]) return 'page-detail';
   return 'page-home';
 }
@@ -514,13 +844,74 @@ function fillDetail(d) {
   });
 }
 
+function fillSpec(s) {
+  document.getElementById('specTitle').textContent = s.title;
+  document.getElementById('specLede').textContent = s.lede;
+  document.getElementById('specIntro').textContent = s.intro;
+  const artEl = document.getElementById('specArt');
+  if (artEl) artEl.src = s.art;
+
+  const helpEl = document.getElementById('specHelp');
+  helpEl.innerHTML = '';
+  (s.help || []).forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'hov4';
+    div.style.cssText = 'border:1.5px solid rgba(20,19,16,0.18);border-radius:14px;padding:16px 18px;font-size:15px;font-weight:400;line-height:1.45';
+    div.textContent = item;
+    helpEl.appendChild(div);
+  });
+
+  const approachEl = document.getElementById('specApproach');
+  approachEl.innerHTML = '';
+  (s.approach || []).forEach(step => {
+    const card = document.createElement('div');
+    card.style.cssText = 'background:#FCF3E3;border-radius:20px;padding:26px 28px;display:flex;flex-direction:column;gap:10px';
+    const h = document.createElement('span');
+    h.style.cssText = "font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px;line-height:1.2;color:#141310";
+    h.textContent = step.h;
+    const p = document.createElement('span');
+    p.style.cssText = 'font-size:15.5px;font-weight:350;line-height:1.6';
+    p.textContent = step.p;
+    card.appendChild(h); card.appendChild(p);
+    approachEl.appendChild(card);
+  });
+
+  const forWhomEl = document.getElementById('specForWhom');
+  forWhomEl.innerHTML = '';
+  (s.forWhom || []).forEach(who => {
+    const div = document.createElement('div');
+    div.style.cssText = 'border-top:1px solid rgba(20,19,16,0.15);padding-top:14px;font-size:16.5px;font-weight:400;line-height:1.5';
+    div.textContent = who;
+    forWhomEl.appendChild(div);
+  });
+
+  const faqEl = document.getElementById('specFaq');
+  faqEl.innerHTML = '';
+  (s.faq || []).forEach(qa => {
+    const block = document.createElement('div');
+    block.style.cssText = 'border-top:1.5px solid rgba(20,19,16,0.18);padding:18px 0 4px';
+    const h3 = document.createElement('h3');
+    h3.style.cssText = "font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:17.5px;line-height:1.3;margin:0 0 8px";
+    h3.textContent = qa.q;
+    const p = document.createElement('p');
+    p.style.cssText = 'margin:0;font-size:15.5px;font-weight:350;line-height:1.6';
+    p.textContent = qa.a;
+    block.appendChild(h3); block.appendChild(p);
+    faqEl.appendChild(block);
+  });
+}
+
 function render() {
   const section = pageSection(state.page);
-  ['page-home', 'page-about', 'page-detail', 'page-contact'].forEach(id => {
-    document.getElementById(id).style.display = (id === section) ? '' : 'none';
+  ['page-home', 'page-about', 'page-detail', 'page-contact', 'page-spec'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = (id === section) ? '' : 'none';
   });
   if (PAGES[state.page]) fillDetail(PAGES[state.page]);
+  if (typeof SPECS !== 'undefined' && SPECS[state.page]) fillSpec(SPECS[state.page]);
   document.getElementById('servicesMenu').style.setProperty('display', state.menu === 'services' ? 'flex' : 'none', 'important');
+  const specMenuEl = document.getElementById('specMenu');
+  if (specMenuEl) specMenuEl.style.setProperty('display', state.menu === 'spec' ? 'flex' : 'none', 'important');
   document.getElementById('mobilePanel').style.setProperty('display', state.menu === 'mobile' ? 'flex' : 'none', 'important');
   document.getElementById('sentMsg').style.display = state.sent ? 'block' : 'none';
   setupReveal();
@@ -537,6 +928,12 @@ function nav(page, e) {
 function toggleServices(e) {
   e.preventDefault(); e.stopPropagation();
   state.menu = state.menu === 'services' ? null : 'services';
+  render();
+}
+
+function toggleSpec(e) {
+  e.preventDefault(); e.stopPropagation();
+  state.menu = state.menu === 'spec' ? null : 'spec';
   render();
 }
 
@@ -599,7 +996,7 @@ function setupReveal() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const h = (location.hash || '').replace('#', '');
-  if (h === 'about' || h === 'contact' || PAGES[h]) state.page = h;
+  if (h === 'about' || h === 'contact' || PAGES[h] || (typeof SPECS !== 'undefined' && SPECS[h])) state.page = h;
   render();
 });
 </script>
