@@ -68,6 +68,12 @@
     div[data-m="howart"][style*="pointer-events"] { display: flex !important; position: static !important; right: auto !important; top: auto !important; justify-content: center !important; margin: 4px 0 0 !important; }
     div[data-m="howart"][style*="pointer-events"] img[src*="squiggle"] { display: none !important; }
     div[data-m="howart"][style*="pointer-events"] img { width: 150px !important; margin: 0 !important; }
+    [data-m="dash"] { display: none !important; }
+    div[data-step] { position: relative !important; padding-left: 96px !important; min-height: 222px; }
+    div[data-step="3"] { min-height: 0; }
+    span[data-m="mk"] { position: absolute !important; left: 0 !important; top: 0 !important; }
+    div[data-m="vdash"] { display: block !important; left: 21px; top: 44px; }
+    div[data-m="vdash"] img { max-width: none !important; }    div[data-m="step"] { margin-top: 0 !important; }
     div[id="how-it-goes"] { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; margin-bottom: 28px !important; }
     img[alt="Psychology Today profile"] { height: 34px !important; }
     img[alt="College of Registered Psychotherapists of Ontario"] { height: 30px !important; }
@@ -151,7 +157,7 @@
       </nav>
 
       
-        <div id="mobilePanel" data-m="panel" style="display:none;position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - 88px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#FCF3E3;box-shadow:0 18px 40px rgba(20,19,16,0.14);flex-direction:column;gap:2px;padding:10px 20px 18px;border-top:1px solid rgba(20,19,16,0.12)">
+        <div id="mobilePanel" data-m="panel" style="display:none;position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - 88px);max-height:calc(100dvh - 88px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#FCF3E3;box-shadow:0 18px 40px rgba(20,19,16,0.14);flex-direction:column;gap:2px;padding:10px 20px 18px;border-top:1px solid rgba(20,19,16,0.12)">
           <a href="#" onclick="nav('home',event)" style="padding:13px 4px;font-size:16px;font-weight:500;color:#141310">Home</a>
           <a href="#" onclick="nav('about',event)" style="padding:13px 4px;font-size:16px;font-weight:500;color:#141310">About</a>
           <span style="padding:14px 4px 4px;font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(20,19,16,0.45)">Services</span>
@@ -227,22 +233,30 @@
           <img src="./meditate-msdw3lea-svud.png" alt="Two people embracing" style="width:205px;display:block">
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:34px">
-        <div>
-          <span style="display:flex;align-items:center;gap:10px;height:22px;font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:0.08em;color:#2E3FCB">01</span>
-          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:10px 0 10px">Say hello</h3>
+      <div data-m="map" style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:34px;padding-bottom:20px">
+        <div data-m="dash" style="position:absolute;left:1.95%;top:21px;width:34.4%;aspect-ratio:698/169;transform:translateY(-53.25%);pointer-events:none;z-index:0"><img src="art/map-line-2.png" alt="" style="width:100%;height:100%;display:block;transform:scaleY(-1);clip-path:inset(0 100% 0 0);transition:clip-path 1.2s linear"></div>
+        <div data-m="dash" style="position:absolute;left:36.33%;top:62px;width:34.4%;aspect-ratio:698/169;transform:translateY(-46.75%);pointer-events:none;z-index:0"><img src="art/map-line-2.png" alt="" style="width:100%;height:100%;display:block;clip-path:inset(0 100% 0 0);transition:clip-path 1.2s linear"></div>
+
+        <div data-step="1" style="position:relative;z-index:1">
+          <div data-m="vdash" style="display:none;position:absolute;width:0;height:0"><svg width="90" height="200" viewBox="0 0 90 200" fill="none" style="display:block;margin-left:-21px;overflow:visible"><mask id="vstrail1" maskUnits="userSpaceOnUse" x="-24" y="-24" width="140" height="250"><path d="M21 0 C21 20 18 31 27 42 C41 60 78 57 76 84 C74 106 44 109 36 92 C28 76 47 62 62 72 C78 83 72 118 52 134 C34 149 24 168 21 200" stroke="#fff" stroke-width="18" stroke-linecap="butt" fill="none" pathLength="1000" stroke-dasharray="1000 1000" stroke-dashoffset="1000" data-m="draw" style="transition:stroke-dashoffset 1.7s linear"></path></mask><path d="M21 0 C21 20 18 31 27 42 C41 60 78 57 76 84 C74 106 44 109 36 92 C28 76 47 62 62 72 C78 83 72 118 52 134 C34 149 24 168 21 200" data-m="ink" stroke="#4052CE" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="13 9" fill="none" stroke-opacity="0" mask="url(#vstrail1)"></path></svg></div>
+          <span data-m="mk" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#FCF3E3;border:2px dashed #F1362E;font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:0.04em;color:#F1362E">01</span>
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:16px 0 10px">Say hello</h3>
           <p style="margin:0 0 12px;font-size:15px;font-weight:350;line-height:1.6">A sentence is enough. You do not have to explain it well, or know what to call it — that is part of what we work out together.</p>
           <a href="#" onclick="nav('contact',event)" style="font-size:14px;font-weight:600">Send a note →</a>
         </div>
-        <div>
-          <span style="display:flex;align-items:center;gap:10px;height:22px;font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:0.08em;color:#2E3FCB">02</span>
-          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:10px 0 10px">A first conversation</h3>
+
+        <div data-m="step" data-step="2" style="position:relative;z-index:1;margin-top:41px">
+          <div data-m="vdash" style="display:none;position:absolute;width:0;height:0"><svg width="90" height="200" viewBox="0 0 90 200" fill="none" style="display:block;margin-left:-21px;overflow:visible"><mask id="vstrail2" maskUnits="userSpaceOnUse" x="-24" y="-24" width="140" height="250"><path d="M21 0 C21 24 33 31 45 43 C58 57 41 76 27 84 C12 93 15 114 33 119 C52 124 63 107 55 96 C49 88 38 92 40 101 C46 134 32 166 21 200" stroke="#fff" stroke-width="18" stroke-linecap="butt" fill="none" pathLength="1000" stroke-dasharray="1000 1000" stroke-dashoffset="1000" data-m="draw" style="transition:stroke-dashoffset 1.7s linear"></path></mask><path d="M21 0 C21 24 33 31 45 43 C58 57 41 76 27 84 C12 93 15 114 33 119 C52 124 63 107 55 96 C49 88 38 92 40 101 C46 134 32 166 21 200" data-m="ink" stroke="#4052CE" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="13 9" fill="none" stroke-opacity="0" mask="url(#vstrail2)"></path></svg></div>
+          <span data-m="mk" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#FCF3E3;border:2px dashed #F1362E;font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:0.04em;color:#F1362E">02</span>
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:16px 0 10px">A first conversation</h3>
           <p style="margin:0;font-size:15px;font-weight:350;line-height:1.6">Fifteen free minutes to see how it feels. No commitment.</p>
         </div>
-        <div>
-          <span style="display:flex;align-items:center;gap:10px;height:22px;font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:0.08em;color:#2E3FCB">03</span>
-          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:10px 0 10px">Find your rhythm</h3>
+
+        <div data-m="step" data-step="3" style="position:relative;z-index:1;margin-top:0">
+          <span data-m="mk" style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#FCF3E3;border:2px solid #F1362E;font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:15px;letter-spacing:0.04em;color:#F1362E">03</span>
+          <h3 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:22px;margin:16px 0 10px">Find your rhythm</h3>
           <p style="margin:0;font-size:15px;font-weight:350;line-height:1.6">Weekly, bi-weekly, or a handful of sessions when life feels challenging. You set the pace and can pause anytime.</p>
+          <img src="art/redasterix.png" alt="" style="position:absolute;right:6px;bottom:-34px;width:54px;pointer-events:none">
         </div>
       </div>
     </section>
@@ -1346,7 +1360,7 @@
         </form>
       </div>
       <div style="display:flex;flex-direction:column;gap:22px">
-        <img src="./lyingdown-msc8avqw-m61v.png" alt="Person floating" style="width:100%;display:block">
+        <img src="./candleguy-msekehan-05e8.png" alt="Person floating" style="width:100%;display:block">
         <div style="background:#E9DFBF;border-radius:20px;padding:28px">
           <h2 style="font-family:'Heading Now','Archivo',sans-serif;font-weight:600;font-size:19px;margin:0 0 14px">Where to reach me</h2>
           <div style="display:flex;flex-direction:column;gap:10px;font-size:14.5px;font-weight:350;line-height:1.5">
@@ -1368,7 +1382,7 @@
       <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#F1362E">Trusted by</span>
       <a class="hov5" href="https://www.psychologytoday.com/ca/therapists/varun-sarangapani-toronto-on/1674803" target="_blank" rel="noopener" style="display:block"><img src="art/psychology-today-blue.png" alt="Psychology Today profile" style="height:56px;display:block"></a>
       <a class="hov5" href="https://www.crpo.ca/" target="_blank" rel="noopener" style="display:block"><img src="art/crpo-blue.png" alt="College of Registered Psychotherapists of Ontario" style="height:50px;display:block"></a>
-      <a class="hov5" href="https://www.ccpa-accp.ca/" target="_blank" rel="noopener" style="display:block"><img src="art/ccc-logo.png" alt="Canadian Certified Counsellor" style="height:62px;display:block"></a>
+      <a class="hov5" href="https://www.ccpa-accp.ca/" target="_blank" rel="noopener" style="display:block"><img src="art/ccpa-logo-brand.png" alt="Canadian Certified Counsellor" style="height:62px;display:block"></a>
     </div>
   </section>
 
@@ -1399,6 +1413,11 @@
         <a href="#" onclick="nav('contact',event)" style="color:#141310">Contact</a>
         <a href="mailto:varun.counselling@gmail.com" style="color:#141310">varun.counselling@gmail.com</a>
       </div>
+    </div>
+
+    <div style="max-width:1180px;margin:44px auto 0;padding:22px 0 0;border-top:1px solid rgba(20,19,16,0.12);display:flex;flex-wrap:wrap;gap:14px 28px;align-items:baseline;justify-content:space-between">
+      <p style="margin:0;font-size:13px;font-weight:350;opacity:0.65">© 2026 Varun Sarangapani Counselling. All rights reserved.</p>
+      <p style="margin:0;font-size:13px;font-weight:350;opacity:0.65;max-width:520px">Registered Psychotherapist (Qualifying), CRPO. Serving Ontario online and in person. Nothing on this site is a substitute for emergency care — if you are in crisis, call or text 988.</p>
     </div>
   </footer>
 </div>
@@ -1956,13 +1975,74 @@ function renderScreener(kind, mount) {
 }
 
 /* ---------- Scroll reveal ---------- */
-let io, sweep;
+let io, sweep, mapCheck, runMapSequence;
 function prefersReducedMotion() {
   return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 }
 
+function buildTrails() {
+  document.querySelectorAll('[data-m="vdash"] svg').forEach(svg => {
+    if (svg.dataset.built) return;
+    const ink = svg.querySelector('[data-m="ink"]');
+    const src = svg.querySelector('[data-m="draw"]');
+    if (!ink || !src) return;
+    svg.dataset.built = '1';
+    const L = src.getTotalLength();
+    const NS = 'http://www.w3.org/2000/svg';
+    const segs = [];
+    const chunks = [];
+    for (let a = 0; a < L - 1; a += 22) {
+      const dashEnd = Math.min(a + 13, L);
+      for (let c = a; c < dashEnd - 0.2; c += 3) chunks.push([c, Math.min(c + 3.15, dashEnd)]);
+    }
+    for (const [ca, cb] of chunks) {
+      const a = ca, b = cb;
+      let d = '';
+      for (let t = a; t < b; t += 1.6) {
+        const p = src.getPointAtLength(t);
+        d += (d ? 'L' : 'M') + p.x.toFixed(2) + ' ' + p.y.toFixed(2);
+      }
+      const e = src.getPointAtLength(b);
+      d += 'L' + e.x.toFixed(2) + ' ' + e.y.toFixed(2);
+      const seg = document.createElementNS(NS, 'path');
+      seg.setAttribute('d', d);
+      seg.setAttribute('stroke', '#4052CE');
+      seg.setAttribute('stroke-width', '4.5');
+      seg.setAttribute('stroke-linecap', 'round');
+      seg.setAttribute('fill', 'none');
+      seg.style.visibility = 'hidden';
+      svg.appendChild(seg);
+      segs.push(seg);
+    }
+    ink.remove();
+    const mask = src.closest('mask');
+    if (mask) mask.remove();
+    svg.__segs = segs;
+  });
+}
+
+function drawTrail(svg, ms) {
+  const segs = svg && svg.__segs;
+  if (!segs) return;
+  if (!ms) { segs.forEach(seg => { seg.style.visibility = 'visible'; }); return; }
+  const t0 = performance.now();
+  let shown = 0;
+  const tick = (now) => {
+    const n = Math.min(segs.length, Math.ceil((now - t0) / ms * segs.length));
+    while (shown < n) segs[shown++].style.visibility = 'visible';
+    if (shown < segs.length) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
 function showAllSections() {
-  document.querySelectorAll('section').forEach(el => {
+  document.querySelectorAll('[data-m="dash"] img').forEach(im => {
+    im.style.transition = 'none';
+    im.style.clipPath = 'none';
+  });
+  buildTrails();
+  document.querySelectorAll('[data-m="vdash"] svg').forEach(sv => drawTrail(sv, 0));
+  document.querySelectorAll('section, [data-step]').forEach(el => {
     el.dataset.reveal = '1';
     el.style.transition = 'none';
     el.style.opacity = '1';
@@ -1974,6 +2054,24 @@ function setupReveal() {
   if (prefersReducedMotion()) { showAllSections(); return; }
   if (!('IntersectionObserver' in window)) return;
   if (!io) {
+    buildTrails();
+    runMapSequence = () => {
+      const steps = [...document.querySelectorAll('[data-step]')]
+        .sort((a, b) => a.dataset.step - b.dataset.step);
+      const across = document.querySelectorAll('[data-m="dash"] img');
+      let t = 120;
+      steps.forEach((el, i) => {
+        setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, t);
+        t += 560;
+        const line = across[i], svg = el.querySelector('[data-m="vdash"] svg');
+        if (!line && !svg) return;
+        setTimeout(() => {
+          if (line) line.style.clipPath = 'inset(0)';
+          if (svg) drawTrail(svg, 1500);
+        }, t);
+        t += 900;
+      });
+    };
     const reveal = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; io.unobserve(el); };
     io = new IntersectionObserver((entries) => {
       entries.forEach(en => {
@@ -1981,27 +2079,46 @@ function setupReveal() {
       });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
     sweep = () => {
-      document.querySelectorAll('section[data-reveal]').forEach(el => {
+      document.querySelectorAll('[data-reveal]').forEach(el => {
         if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight) reveal(el);
       });
     };
     window.addEventListener('scroll', sweep, { passive: true });
     window.addEventListener('resize', sweep);
   }
-  document.querySelectorAll('section').forEach(el => {
+  document.querySelectorAll('section, [data-step]').forEach(el => {
     if (el.dataset.reveal) return;
     el.dataset.reveal = '1';
+    const step = el.dataset.step ? parseInt(el.dataset.step, 10) : 0;
     const r = el.getBoundingClientRect();
     const visible = r.top < window.innerHeight * 0.9;
     el.style.transition = 'opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1)';
+    if (step) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      return;
+    }
     if (visible) { el.style.opacity = '1'; el.style.transform = 'none'; return; }
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     io.observe(el);
   });
+  const map = document.querySelector('[data-m="map"]');
+  if (map && !map.dataset.seq) {
+    map.dataset.seq = '1';
+    const check = () => {
+      if (map.dataset.seqRun) return;
+      if (map.getBoundingClientRect().top > window.innerHeight * 0.88) return;
+      map.dataset.seqRun = '1';
+      window.removeEventListener('scroll', check);
+      runMapSequence();
+    };
+    mapCheck = check;
+    window.addEventListener('scroll', check, { passive: true });
+    requestAnimationFrame(check);
+  }
   if (sweep) requestAnimationFrame(sweep);
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   const h = (location.hash || '').replace('#', '');
   if (h === 'about' || h === 'contact' || PAGES[h] || SPEC_PAGES.indexOf(h) !== -1) state.page = h;
