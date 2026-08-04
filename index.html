@@ -1685,18 +1685,18 @@ const SPEC_PAGES = ['anxiety', 'depression', 'mens', 'emdr', 'internet', 'grief'
 
 const ROUTES = {
   home: '/',
-  about: '/about',
-  contact: '/contact',
-  individual: '/individual-counselling',
-  couples: '/couples-counselling',
-  meditation: '/meditation-mindfulness',
-  anxiety: '/anxiety-therapy',
-  depression: '/depression-therapy',
-  mens: '/mens-mental-health',
-  emdr: '/emdr-therapy',
-  internet: '/behavioural-addiction',
-  grief: '/grief-counselling',
-  emotions: '/emotional-regulation'
+  about: '/about/',
+  contact: '/contact/',
+  individual: '/individual-counselling/',
+  couples: '/couples-counselling/',
+  meditation: '/meditation-mindfulness/',
+  anxiety: '/anxiety-therapy/',
+  depression: '/depression-therapy/',
+  mens: '/mens-mental-health/',
+  emdr: '/emdr-therapy/',
+  internet: '/behavioural-addiction/',
+  grief: '/grief-counselling/',
+  emotions: '/emotional-regulation/'
 };
 const PATH_TO_PAGE = Object.keys(ROUTES).reduce((m, k) => { m[ROUTES[k]] = k; return m; }, {});
 
@@ -2328,6 +2328,9 @@ window.addEventListener('popstate', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   state.page = pageFromLocation();
+  // __ROUTE__ describes the file that was served; after boot the URL is the
+  // source of truth, otherwise back/forward would keep restoring this page.
+  window.__ROUTE__ = null;
   // Rewrite legacy #hash links to their real path without adding a history entry.
   if (location.hash && ROUTES[location.hash.replace('#', '')]) {
     try { history.replaceState({ page: state.page }, '', ROUTES[state.page]); } catch (err) {}

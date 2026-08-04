@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anxiety &amp; Panic Therapy in Toronto - Varun Sarangapani</title>
 <meta name="description" content="Evidence-based therapy in Toronto for anxiety, panic attacks, health and social anxiety, and avoidance. CBT, DBT and nervous-system work. Includes a free GAD-7 self-check.">
-<link rel="canonical" href="https://varuncounselling.com/anxiety-therapy">
+<link rel="canonical" href="https://varuncounselling.com/anxiety-therapy/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Varun Sarangapani Counselling">
 <meta property="og:locale" content="en_CA">
-<meta property="og:url" content="https://varuncounselling.com/anxiety-therapy">
+<meta property="og:url" content="https://varuncounselling.com/anxiety-therapy/">
 <meta property="og:title" content="Anxiety &amp; Panic Therapy in Toronto - Varun Sarangapani">
 <meta property="og:description" content="Evidence-based therapy in Toronto for anxiety, panic attacks, health and social anxiety, and avoidance. CBT, DBT and nervous-system work. Includes a free GAD-7 self-check.">
 <meta property="og:image" content="https://varuncounselling.com/best-msca6nrq-jf9y.png">
@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="Anxiety &amp; Panic Therapy in Toronto - Varun Sarangapani">
 <meta name="twitter:description" content="Evidence-based therapy in Toronto for anxiety, panic attacks, health and social anxiety, and avoidance. CBT, DBT and nervous-system work. Includes a free GAD-7 self-check.">
 <meta name="twitter:image" content="https://varuncounselling.com/best-msca6nrq-jf9y.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Anxiety & Panic Therapy in Toronto - Varun Sarangapani","description":"Evidence-based therapy in Toronto for anxiety, panic attacks, health and social anxiety, and avoidance. CBT, DBT and nervous-system work. Includes a free GAD-7 self-check.","url":"https://varuncounselling.com/anxiety-therapy","isPartOf":{"@id":"https://varuncounselling.com/#practice"},"about":{"@id":"https://varuncounselling.com/#practice"},"inLanguage":"en-CA"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Anxiety & Panic Therapy in Toronto - Varun Sarangapani","description":"Evidence-based therapy in Toronto for anxiety, panic attacks, health and social anxiety, and avoidance. CBT, DBT and nervous-system work. Includes a free GAD-7 self-check.","url":"https://varuncounselling.com/anxiety-therapy/","isPartOf":{"@id":"https://varuncounselling.com/#practice"},"about":{"@id":"https://varuncounselling.com/#practice"},"inLanguage":"en-CA"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet">
@@ -1684,18 +1684,18 @@ const SPEC_PAGES = ['anxiety', 'depression', 'mens', 'emdr', 'internet', 'grief'
 
 const ROUTES = {
   home: '/',
-  about: '/about',
-  contact: '/contact',
-  individual: '/individual-counselling',
-  couples: '/couples-counselling',
-  meditation: '/meditation-mindfulness',
-  anxiety: '/anxiety-therapy',
-  depression: '/depression-therapy',
-  mens: '/mens-mental-health',
-  emdr: '/emdr-therapy',
-  internet: '/behavioural-addiction',
-  grief: '/grief-counselling',
-  emotions: '/emotional-regulation'
+  about: '/about/',
+  contact: '/contact/',
+  individual: '/individual-counselling/',
+  couples: '/couples-counselling/',
+  meditation: '/meditation-mindfulness/',
+  anxiety: '/anxiety-therapy/',
+  depression: '/depression-therapy/',
+  mens: '/mens-mental-health/',
+  emdr: '/emdr-therapy/',
+  internet: '/behavioural-addiction/',
+  grief: '/grief-counselling/',
+  emotions: '/emotional-regulation/'
 };
 const PATH_TO_PAGE = Object.keys(ROUTES).reduce((m, k) => { m[ROUTES[k]] = k; return m; }, {});
 
@@ -2327,6 +2327,9 @@ window.addEventListener('popstate', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   state.page = pageFromLocation();
+  // __ROUTE__ describes the file that was served; after boot the URL is the
+  // source of truth, otherwise back/forward would keep restoring this page.
+  window.__ROUTE__ = null;
   // Rewrite legacy #hash links to their real path without adding a history entry.
   if (location.hash && ROUTES[location.hash.replace('#', '')]) {
     try { history.replaceState({ page: state.page }, '', ROUTES[state.page]); } catch (err) {}
