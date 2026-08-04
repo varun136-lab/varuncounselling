@@ -1559,6 +1559,31 @@ function fillDetail(d, page) {
   });
 }
 
+let bodyScrollLocked = false;
+let savedScrollY = 0;
+
+function lockBodyScroll() {
+  if (bodyScrollLocked) return;
+  bodyScrollLocked = true;
+  savedScrollY = window.scrollY || window.pageYOffset || 0;
+  document.body.style.position = 'fixed';
+  document.body.style.top = '-' + savedScrollY + 'px';
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
+}
+
+function unlockBodyScroll() {
+  if (!bodyScrollLocked) return;
+  bodyScrollLocked = false;
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+  window.scrollTo(0, savedScrollY);
+}
+
 function render() {
   const section = pageSection(state.page);
   const allIds = ['page-home', 'page-about', 'page-detail', 'page-contact'].concat(SPEC_PAGES.map(k => 'page-' + k));
@@ -1574,7 +1599,7 @@ function render() {
   const specMenuEl = document.getElementById('specMenu');
   if (specMenuEl) specMenuEl.style.setProperty('display', state.menu === 'spec' ? 'flex' : 'none', 'important');
   document.getElementById('mobilePanel').style.setProperty('display', state.menu === 'mobile' ? 'flex' : 'none', 'important');
-  document.body.style.overflow = state.menu === 'mobile' ? 'hidden' : '';
+  if (state.menu === 'mobile') lockBodyScroll(); else unlockBodyScroll();
   document.getElementById('sentMsg').style.display = state.sent ? 'block' : 'none';
   const errEl = document.getElementById('sendErrorMsg');
   if (errEl) errEl.style.display = state.sendError ? 'block' : 'none';
@@ -1585,6 +1610,7 @@ function render() {
 
 function nav(page, e) {
   if (e) { e.preventDefault(); e.stopPropagation(); }
+  if (bodyScrollLocked) unlockBodyScroll();
   state.page = page; state.menu = null; state.sent = false; state.sendError = false;
   try { history.replaceState(null, '', '#' + (page === 'home' ? '' : page)); } catch (err) {}
   window.scrollTo(0, 0);
