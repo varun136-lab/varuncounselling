@@ -1698,7 +1698,10 @@ const ROUTES = {
   grief: '/grief-counselling/',
   emotions: '/emotional-regulation/'
 };
-const PATH_TO_PAGE = Object.keys(ROUTES).reduce((m, k) => { m[ROUTES[k]] = k; return m; }, {});
+const PATH_TO_PAGE = Object.keys(ROUTES).reduce((m, k) => {
+  m[ROUTES[k].replace(/\/+$/, '') || '/'] = k;
+  return m;
+}, {});
 
 function pageFromLocation() {
   if (window.__ROUTE__ && ROUTES[window.__ROUTE__]) return window.__ROUTE__;
