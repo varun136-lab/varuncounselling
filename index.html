@@ -1559,6 +1559,18 @@ function fillDetail(d, page) {
   });
 }
 
+function sizeMobilePanel() {
+  const mp = document.getElementById('mobilePanel');
+  const headerEl = document.querySelector('header');
+  if (!mp || !headerEl) return;
+  const vh = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+  const headerBottom = headerEl.getBoundingClientRect().bottom;
+  const avail = Math.max(160, vh - headerBottom - 10);
+  mp.style.setProperty('max-height', avail + 'px', 'important');
+}
+window.addEventListener('resize', () => { if (state.menu === 'mobile') sizeMobilePanel(); });
+if (window.visualViewport) window.visualViewport.addEventListener('resize', () => { if (state.menu === 'mobile') sizeMobilePanel(); });
+
 let bodyScrollLocked = false;
 let savedScrollY = 0;
 
@@ -1598,7 +1610,9 @@ function render() {
   document.getElementById('servicesMenu').style.setProperty('display', state.menu === 'services' ? 'flex' : 'none', 'important');
   const specMenuEl = document.getElementById('specMenu');
   if (specMenuEl) specMenuEl.style.setProperty('display', state.menu === 'spec' ? 'flex' : 'none', 'important');
-  document.getElementById('mobilePanel').style.setProperty('display', state.menu === 'mobile' ? 'flex' : 'none', 'important');
+  const mp = document.getElementById('mobilePanel');
+  mp.style.setProperty('display', state.menu === 'mobile' ? 'flex' : 'none', 'important');
+  if (state.menu === 'mobile') sizeMobilePanel();
   if (state.menu === 'mobile') lockBodyScroll(); else unlockBodyScroll();
   document.getElementById('sentMsg').style.display = state.sent ? 'block' : 'none';
   const errEl = document.getElementById('sendErrorMsg');
