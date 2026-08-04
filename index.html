@@ -1679,6 +1679,13 @@ function submitForm(e) {
     .catch(() => { state.sending = false; state.sendError = true; render(); });
 }
 
+if (window.matchMedia) {
+  const rmq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const onRMChange = () => { if (rmq.matches) showAllSections(); };
+  if (rmq.addEventListener) rmq.addEventListener('change', onRMChange);
+  else if (rmq.addListener) rmq.addListener(onRMChange);
+}
+
 document.addEventListener('click', () => { if (state.menu) { state.menu = null; render(); } });
 
 /* ---------- Box breathing widget ---------- */
@@ -1950,7 +1957,21 @@ function renderScreener(kind, mount) {
 
 /* ---------- Scroll reveal ---------- */
 let io, sweep;
+function prefersReducedMotion() {
+  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+}
+
+function showAllSections() {
+  document.querySelectorAll('section').forEach(el => {
+    el.dataset.reveal = '1';
+    el.style.transition = 'none';
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+  });
+}
+
 function setupReveal() {
+  if (prefersReducedMotion()) { showAllSections(); return; }
   if (!('IntersectionObserver' in window)) return;
   if (!io) {
     const reveal = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; io.unobserve(el); };
