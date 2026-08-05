@@ -1,0 +1,20 @@
+# Fonts and images are content-hashed or stable; cache them hard.
+# HTML stays uncached so deploys go live immediately.
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/art/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
