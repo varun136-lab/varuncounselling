@@ -998,6 +998,10 @@
       </div>
     </section>
 
+        <section style="max-width:1220px;margin:0 auto;padding:50px 40px">
+      <div id="cognitionMount"></div>
+    </section>
+
     <section style="max-width:1220px;margin:0 auto;padding:50px 40px">
       <div style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start">
         <div>
@@ -1833,6 +1837,7 @@ function render() {
   if (section === 'page-detail' && PAGES[state.page]) fillDetail(PAGES[state.page], state.page);
   if (state.page === 'anxiety') mountScreener('gad7', 'gad7Mount');
   if (state.page === 'depression') mountScreener('phq9', 'phq9Mount');
+  if (state.page === 'emdr') mountCognitions();
 
   document.getElementById('servicesMenu').style.setProperty('display', state.menu === 'services' ? 'flex' : 'none', 'important');
   const specMenuEl = document.getElementById('specMenu');
@@ -2181,6 +2186,203 @@ function renderScreener(kind, mount) {
   container.appendChild(footNote);
 
   mount.appendChild(container);
+}
+
+const COG_DOMAINS = [
+  { key:'responsibility', label:'Responsibility', tint:'#8FA8BC' },
+  { key:'safety',         label:'Safety',         tint:'#C7A98F' },
+  { key:'choice',         label:'Choice & Control',tint:'#C49A9A' },
+  { key:'power',          label:'Power',          tint:'#E0A183' },
+  { key:'worth',          label:'Value & Worth',  tint:'#D2B27B' },
+  { key:'belonging',      label:'Belonging',      tint:'#A3B394' },
+  { key:'emotions',       label:'Emotions',       tint:'#A2BCC8' },
+  { key:'relationships',  label:'Relationships',  tint:'#8CA3B8' },
+  { key:'achievement',    label:'Achievement',    tint:'#A6A6A4' },
+  { key:'body',           label:'Physical Self',  tint:'#BE9496' },
+  { key:'identity',       label:'Identity',       tint:'#E2AE8F' },
+  { key:'spirituality',   label:'Spirituality',   tint:'#D4BB86' }
+];
+
+const COGNITIONS = [
+  ['responsibility','I should have prevented it.','I am accountable but not responsible for everything.'],
+  ['responsibility','I am a burden to others.','I can learn from my mistakes.'],
+  ['responsibility','I always let people down.','I take responsibility for my growth.'],
+  ['responsibility','It’s my fault things went wrong.','I trust others to carry their responsibilities.'],
+  ['safety','I am always in danger.','I can create safe spaces for myself.'],
+  ['safety','Bad things always happen to me.','I can choose to leave unsafe situations.'],
+  ['safety','The world is not safe.','I am resilient in unsafe moments.'],
+  ['safety','I cannot protect myself.','I can protect myself when needed.'],
+  ['choice','I have no control over my life.','I can make empowered choices.'],
+  ['choice','I am stuck forever.','I have control over my actions.'],
+  ['choice','I always make the wrong choices.','I am free to change my path.'],
+  ['choice','My life is controlled by others.','My choices shape my future.'],
+  ['power','I am weak and powerless.','I am stronger than I think.'],
+  ['power','I can’t stop what’s happening to me.','I can influence my situation.'],
+  ['power','I am at the mercy of others.','I can make my voice heard.'],
+  ['power','I have no influence over my life.','I am powerful in my own way.'],
+  ['worth','I am invisible to others.','I am worthy of love and kindness.'],
+  ['worth','I have no purpose in life.','My flaws do not define me.'],
+  ['worth','I am flawed beyond repair.','I have inherent value and purpose.'],
+  ['worth','I don’t deserve to be loved.','I am deserving of respect.'],
+  ['belonging','I don’t fit in anywhere.','I can find my community.'],
+  ['belonging','I will always be an outsider.','I am connected to others in meaningful ways.'],
+  ['belonging','No one understands me.','I create my sense of belonging.'],
+  ['belonging','I don’t belong in my family or friends group.','I am welcome and valued here.'],
+  ['emotions','My feelings are too much for others.','My emotions are valid and acceptable.'],
+  ['emotions','I shouldn’t feel this way.','I can express my feelings safely.'],
+  ['emotions','I need to hide my emotions.','I can hold space for my emotions.'],
+  ['emotions','Feeling emotions makes me weak.','Feeling emotions is part of being human.'],
+  ['relationships','I don’t deserve good relationships.','I am worthy of healthy, loving relationships.'],
+  ['relationships','People always leave me.','I can nurture meaningful connections.'],
+  ['relationships','I am unlovable.','I bring value to my relationships.'],
+  ['relationships','I ruin every relationship I’m in.','I am capable of maintaining lasting bonds.'],
+  ['achievement','I never succeed.','I am capable of achieving my goals.'],
+  ['achievement','I am incapable of achieving my goals.','My efforts lead to growth and learning.'],
+  ['achievement','I fail at everything I try.','I celebrate my progress, no matter how small.'],
+  ['achievement','I am not good at anything.','I am skilled and capable in many ways.'],
+  ['body','My body is broken.','My body is strong and resilient.'],
+  ['body','I hate how I look.','I am learning to love my body.'],
+  ['body','I can’t trust my body.','My body supports me every day.'],
+  ['body','My body is not enough.','I can take care of my body with love and kindness.'],
+  ['identity','I don’t know who I am.','I am discovering and embracing my true self.'],
+  ['identity','I am nothing without others.','I am more than enough, just as I am.'],
+  ['identity','I don’t have a purpose.','My identity is valuable and valid.'],
+  ['identity','I am ashamed of who I am.','I am proud of who I am becoming.'],
+  ['spirituality','I am disconnected from everything.','I am connected to something greater than myself.'],
+  ['spirituality','I have no place in the universe.','My existence has meaning and value.'],
+  ['spirituality','I am being punished.','I am part of the flow of life.'],
+  ['spirituality','My existence is meaningless.','I am at peace with the universe around me.']
+];
+
+/* ---------- EMDR cognition table ---------- */
+let cogFilter = 'all';
+const cogFlipped = new Set();
+
+function mountCognitions() {
+  const mount = document.getElementById('cognitionMount');
+  if (!mount) return;
+  if (!mount.dataset.built) {
+    mount.dataset.built = '1';
+    cogFilter = 'all';
+    cogFlipped.clear();
+  }
+  renderCognitions();
+}
+
+function renderCognitions() {
+  const mount = document.getElementById('cognitionMount');
+  if (!mount) return;
+  const reduced = prefersReducedMotion();
+  mount.innerHTML = '';
+
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'background:#E9DFBF;border-radius:28px;padding:44px 46px';
+
+  const kicker = document.createElement('span');
+  kicker.style.cssText = "font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:500;font-size:14px;color:#2E3FCB;display:block;margin-bottom:8px";
+  kicker.textContent = 'Negative and positive cognitions';
+  wrap.appendChild(kicker);
+
+  const h2 = document.createElement('h2');
+  h2.style.cssText = "font-family:'Heading Now','Archivo',sans-serif;font-style:italic;font-weight:600;font-size:38px;line-height:1.06;color:#F1362E;margin:0 0 12px";
+  h2.textContent = 'What the belief could become';
+  wrap.appendChild(h2);
+
+  const lead = document.createElement('p');
+  lead.style.cssText = 'font-size:16px;font-weight:350;line-height:1.6;margin:0 0 10px;max-width:620px';
+  lead.textContent = 'Trauma tends to leave a sentence behind about who you are. In EMDR we name that sentence, find the memory holding it in place, and work until a truer one can take its weight. Tap any belief to see where it can go.';
+  wrap.appendChild(lead);
+
+  const note = document.createElement('p');
+  note.style.cssText = 'font-size:14.5px;font-weight:500;line-height:1.55;margin:0 0 24px;max-width:620px;color:#2E3FCB';
+  note.textContent = 'The second sentence usually does not feel true at first. That gap between knowing something and believing it is exactly what this work is for.';
+  wrap.appendChild(note);
+
+  // filter chips
+  const chips = document.createElement('div');
+  chips.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px';
+  const mkChip = (key, label, tint) => {
+    const on = cogFilter === key;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('data-cogchip', key);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.style.cssText = 'border:1.5px solid ' + (on ? '#141310' : 'rgba(20,19,16,0.2)') +
+      ';background:' + (on ? '#141310' : 'transparent') +
+      ';color:' + (on ? '#FCF3E3' : '#141310') +
+      ';border-radius:999px;padding:8px 14px;font-size:13px;font-weight:' + (on ? '600' : '400') +
+      ";cursor:pointer;line-height:1.2;font-family:'Heading Now','Archivo',sans-serif;display:inline-flex;align-items:center;gap:7px";
+    if (tint) {
+      const dot = document.createElement('span');
+      dot.style.cssText = 'width:9px;height:9px;border-radius:50%;background:' + tint + ';display:block';
+      b.appendChild(dot);
+    }
+    b.appendChild(document.createTextNode(label));
+    b.onclick = () => { cogFilter = key; renderCognitions(); };
+    return b;
+  };
+  chips.appendChild(mkChip('all', 'All twelve', null));
+  COG_DOMAINS.forEach(d => chips.appendChild(mkChip(d.key, d.label, d.tint)));
+  wrap.appendChild(chips);
+
+  // grid
+  const grid = document.createElement('div');
+  grid.setAttribute('data-coggrid', '1');
+  grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px';
+
+  const shown = COGNITIONS.filter(c => cogFilter === 'all' || c[0] === cogFilter);
+  shown.forEach(([domain, neg, pos]) => {
+    const dom = COG_DOMAINS.find(d => d.key === domain);
+    const id = domain + '|' + neg;
+    const isOn = cogFlipped.has(id);
+
+    const tile = document.createElement('button');
+    tile.type = 'button';
+    tile.setAttribute('data-cogtile', '1');
+    tile.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    tile.style.cssText = 'position:relative;text-align:left;min-height:132px;border-radius:14px;padding:30px 16px 16px;cursor:pointer;' +
+      'border:1.5px solid ' + (isOn ? dom.tint : 'rgba(20,19,16,0.16)') + ';' +
+      'background:' + (isOn ? dom.tint : '#FCF3E3') + ';' +
+      "font-family:'Heading Now','Archivo',sans-serif;display:flex;align-items:flex-start;" +
+      (reduced ? '' : 'transition:background-color .28s ease,border-color .28s ease;');
+
+    const tag = document.createElement('span');
+    tag.style.cssText = 'position:absolute;top:11px;left:16px;display:flex;align-items:center;gap:6px;' +
+      'font-size:10.5px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:' +
+      (isOn ? 'rgba(20,19,16,0.72)' : 'rgba(20,19,16,0.5)');
+    const dot = document.createElement('span');
+    dot.style.cssText = 'width:7px;height:7px;border-radius:50%;background:' + dom.tint + ';display:block';
+    tag.appendChild(dot);
+    tag.appendChild(document.createTextNode(dom.label));
+    tile.appendChild(tag);
+
+    const txt = document.createElement('span');
+    txt.style.cssText = 'font-size:14.5px;line-height:1.45;font-weight:' + (isOn ? '600' : '400') +
+      ';color:#141310;' + (reduced ? '' : 'transition:opacity .18s ease;');
+    txt.textContent = isOn ? pos : neg;
+    tile.appendChild(txt);
+
+    tile.onclick = () => {
+      if (cogFlipped.has(id)) cogFlipped.delete(id); else cogFlipped.add(id);
+      if (reduced) { renderCognitions(); return; }
+      txt.style.opacity = '0';
+      setTimeout(renderCognitions, 150);
+    };
+    grid.appendChild(tile);
+  });
+  wrap.appendChild(grid);
+
+  const count = document.createElement('p');
+  count.style.cssText = 'font-size:13.5px;font-weight:400;opacity:0.65;margin:18px 0 0';
+  count.textContent = 'Showing ' + shown.length + ' of ' + COGNITIONS.length + ' beliefs';
+  wrap.appendChild(count);
+
+  const foot = document.createElement('p');
+  foot.style.cssText = 'font-size:13px;font-weight:350;line-height:1.55;margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(20,19,16,0.15);opacity:0.75';
+  foot.textContent = 'These pairings are illustrative, not a test or a diagnosis. In session the belief you work on is the one that fits your own memory, in your own words, and it is often not the one you expected. Reading a list like this can stir things up; if that happens and you need support now, call or text 988 at any hour in Canada.';
+  wrap.appendChild(foot);
+
+  mount.appendChild(wrap);
 }
 
 /* ---------- Scroll reveal ---------- */
